@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanAid360 - Fisheries Monitoring</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- jQuery for loading modular components -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Load the internal header and footer
+            $("#header-container").load("components/header-internal.html", function() {
+                // Re-initialize any header-specific JavaScript if needed
+                initializeHeaderFunctions();
+            });
+            $("#footer-container").load("components/footer.html");
+             $("#impact-container").load("components/impact-stats.html");
+        });
+        
+        // Function to re-initialize any header-specific JavaScript
+        function initializeHeaderFunctions() {
+            // This ensures any event listeners in the header work correctly
+            // For example, mobile menu toggle functionality
+            if (typeof initMobileMenu === 'function') {
+                initMobileMenu();
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Container - THIS WAS MISSING! -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="page-hero" style="background-image: url('images/EmergencyResponseBullet.png');">
+        <div class="container">
+           <h1 style="color: white;">Ghost Trap Rodeo</h1>
+           <p>Marine debris tournaments removing abandoned fishing gear from our waterways</p>
+
+        </div>
+    </section>
+
+
+ <section class="program-content">
+    <div class="container">
+        <div class="program-overview">
+            <!-- Introduction paragraph -->
+            <p style="color: #000; font-size: 1.2rem; line-height: 1.6; margin-bottom: 30px;"> Ocean Aid 360's habitat restoration program, funded by the National Oceanic and Atmospheric Administration and National Fish and Wildlife Foundation, is built on the belief that anglers and coastal residents know their local waters better than anyone.</p>
+                        <p>The OA360 marine debris tournaments are an opportunity to show what you know, to find and remove derelict crab traps, which catch and kill unchecked, and other forms of marine debris that negatively impact our fisheries. These events are a great opportunity to connect with other watermen and waterwomen, to improve marine habitat, and to compete (by foot, paddlecraft, or boat) for valuable prizes from fishing and boating industry sponsors.</p>
+                        
+                        <div class="event-details">
+                            <h4>2025 Tournament Schedule</h4>
+                            <ul class="event-list">
+                                <li><strong>January 11:</strong> Apalachicola</li>
+                                <li><strong>January 18-19:</strong> Cedar Key</li>
+                                <li><strong>May (TBD):</strong> Key West (Captains Invitational)</li>
+                                <li><strong>July (TBD):</strong> Boca Grande</li>
+                            </ul>
+                            <p class="event-note">Additional dates being added regularly as donations and resources allow.</p>
+
+
+            
+            <!-- Three images in a horizontal row -->
+                      <div class="emergency-images" style="display: flex; justify-content: space-between; margin-bottom: 40px;">
+    <div class="emergency-image" style="width: 32%; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; height: 200px;">
+        <img src="images/ghosttrappicture.jpg" alt="Fish Kill" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+    <div class="emergency-image" style="width: 32%; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; height: 200px;">
+        <img src="images/ghosttraprodeobutton.png" alt="Shore Fish Kill" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+    <div class="emergency-image" style="width: 32%; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; height: 200px;">
+        <img src="images/savingshores2.jfif" alt="Red Tide" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+</div>
+ <section class="impact" id="impact-preview">
+    <div class="container">
+     
+           <!-- Impact Stats Container -->
+        <div id="impact-container"></div>
+</section>
+  <blockquote class="testimonial">
+                            <p>"Considering the threats to our coastal areas in Florida and the Bahamas, it's clear our fisheries need us more than ever."</p>
+                            <cite>Capt. Neill Holland, President, Ocean Aid 360</cite>
+                        </blockquote>
+
+
+
+
+            
+               </div>
+    </div>
+</section>
+        
+        <!-- Back to Programs navigation -->
+        <div class="page-navigation container">
+            <a href="index.html" class="btn btn-secondary">← Back to All Programs</a>
+        </div>
+    </main>
+
+    <!-- Footer Container - REPLACED HARDCODED FOOTER -->
+    <div id="footer-container"></div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

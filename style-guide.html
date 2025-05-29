@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Guide | OceanAid360</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Additional CSS for style guide only -->
+    <link rel="stylesheet" href="css/style-guide.css">
+</head>
+<body>
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/OceanAid360-logo.png" alt="OceanAid360">
+                </a>
+            </div>
+            
+            <div class="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="nonprofit.html">Our Programs <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="emergency.html">Emergency Response</a></li>
+                            <li><a href="shores.html">Saving Shores & Wildlife</a></li>
+                            <li><a href="recycling.html">Recycling the Waste</a></li>
+                            <li><a href="funding.html">Funding the Mission</a></li>
+                            <li><a href="partnering.html">Partnering for Impact</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="products-services.html">Products & Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="services.html">Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="cta-button">
+                <a href="donate.html" class="donate-btn">Donate</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="page-hero" style="background-image: url('images/style-guide-hero.jpg');">
+            <div class="container">
+                <h1>OceanAid360 Style Guide</h1>
+                <p>Design system and component library for consistent website development</p>
+            </div>
+        </section>
+
+        <!-- Style Guide Navigation -->
+        <section class="style-guide-nav">
+            <div class="container">
+                <div class="style-guide-nav-inner">
+                    <a href="#colors" class="style-nav-item">Colors</a>
+                    <a href="#typography" class="style-nav-item">Typography</a>
+                    <a href="#buttons" class="style-nav-item">Buttons</a>
+                    <a href="#cards" class="style-nav-item">Cards</a>
+                    <a href="#navigation" class="style-nav-item">Navigation</a>
+                    <a href="#forms" class="style-nav-item">Forms</a>
+                    <a href="#sections" class="style-nav-item">Sections</a>
+                    <a href="#templates" class="style-nav-item">Page Templates</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Colors -->
+        <section id="colors" class="style-guide-section">
+            <div class="container">
+                <h2 class="section-title">Color Palette</h2>
+
+                <div class="style-subsection">
+                    <h3>Primary Colors</h3>
+                    <div class="color-grid">
+                        <div class="color-swatch">
+                            <div class="swatch" style="background-color: #0096c7;"></div>
+                            <div class="swatch-details">
+                                <h4>Primary Blue</h4>
+                                <p class="color-code">#0096c7</p>
+                                <p class="color-description">Use for main actions, primary buttons, and key highlights</p>
+                            </div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch" style="background-color: #66cc99;"></div>
+                            <div class="swatch-details">
+                                <h4>Ocean Green</h4>
+                                <p class="color-code">#66cc99</p>
+                                <p class="color-description">Use for secondary actions, success states, and highlights</p>
+                            </div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch" style="background-color: #003d66;"></div>
+                            <div class="swatch-details">
+                                <h4>Deep Blue</h4>
+                                <p class="color-code">#003d66</p>
+                                <p class="color-description">Use for headers, footers, and dark backgrounds</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Secondary Colors</h3>
+                    <div class="color-grid">
+                        <div class="color-swatch">
+                            <div class="swatch" style="background-color: #00b4d8;"></div>
+                            <div class="swatch-details">
+                                <h4>Light Blue</h4>
+                                <p class="color-code">#00b4d8</p>
+                                <p class="color-description">Use for hover states and secondary highlights</p>
+                            </div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch" style="background-color: #e6f7ef;"></div>
+                            <div class="swatch-details">
+                                <h4>Pale Green</h4>
+                                <p class="color-code">#e6f7ef</p>
+                                <p class="color-description">Use for backgrounds and subtle highlights</p>
+                            </div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch" style="background-color: #f8f9fa;"></div>
+                            <div class="swatch-details">
+                                <h4>Light Gray</h4>
+                                <p class="color-code">#f8f9fa</p>
+                                <p class="color-description">Use for alternate section backgrounds and cards</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Text Colors</h3>
+                    <div class="color-grid">
+                        <div class="color-swatch">
+                            <div class="swatch" style="background-color: #333333;"></div>
+                            <div class="swatch-details">
+                                <h4>Primary Text</h4>
+                                <p class="color-code">#333333</p>
+                                <p class="color-description">Main body text color</p>
+                            </div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch" style="background-color: #666666;"></div>
+                            <div class="swatch-details">
+                                <h4>Secondary Text</h4>
+                                <p class="color-code">#666666</p>
+                                <p class="color-description">Supplementary text and descriptions</p>
+                            </div>
+                        </div>
+                        <div class="color-swatch">
+                            <div class="swatch" style="background-color: #ffffff; border: 1px solid #ddd;"></div>
+                            <div class="swatch-details">
+                                <h4>Light Text</h4>
+                                <p class="color-code">#ffffff</p>
+                                <p class="color-description">Text on dark backgrounds</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography -->
+        <section id="typography" class="style-guide-section">
+            <div class="container">
+                <h2 class="section-title">Typography</h2>
+
+                <div class="style-subsection">
+                    <h3>Headings</h3>
+                    <div class="typography-showcase">
+                        <div class="typography-item">
+                            <h1>Heading Level 1</h1>
+                            <p class="typography-details">Font: 'Segoe UI', size: 2.8rem, weight: 700, color: #004d66</p>
+                            <p class="typography-usage">Use for main page titles and headers</p>
+                        </div>
+                        <div class="typography-item">
+                            <h2>Heading Level 2</h2>
+                            <p class="typography-details">Font: 'Segoe UI', size: 2.5rem, weight: 700, color: #004d66</p>
+                            <p class="typography-usage">Use for section headers</p>
+                        </div>
+                        <div class="typography-item">
+                            <h3>Heading Level 3</h3>
+                            <p class="typography-details">Font: 'Segoe UI', size: 1.8rem, weight: 600, color: #004d66</p>
+                            <p class="typography-usage">Use for subsection headers</p>
+                        </div>
+                        <div class="typography-item">
+                            <h4>Heading Level 4</h4>
+                            <p class="typography-details">Font: 'Segoe UI', size: 1.3rem, weight: 600, color: #004d66</p>
+                            <p class="typography-usage">Use for card titles and minor headings</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Body Text</h3>
+                    <div class="typography-showcase">
+                        <div class="typography-item">
+                            <p>This is a standard paragraph. Combining community collaboration, scientific monitoring, and sustainable solutions to protect our marine resources and coastal communities is at the heart of OceanAid360's mission.</p>
+                            <p class="typography-details">Font: 'Segoe UI', size: 1rem, weight: 400, color: #333, line-height: 1.6</p>
+                            <p class="typography-usage">Use for main content and descriptions</p>
+                        </div>
+                        <div class="typography-item">
+                            <p class="lead-paragraph">This is a lead paragraph. It's slightly larger and used to introduce sections or provide key information at the start of content blocks.</p>
+                            <p class="typography-details">Font: 'Segoe UI', size: 1.2rem, weight: 400, color: #333, line-height: 1.6</p>
+                            <p class="typography-usage">Use for introductory paragraphs</p>
+                        </div>
+                        <div class="typography-item">
+                            <p class="small-text">This is smaller text used for captions, footnotes, and supplementary information that doesn't require the same visual prominence as main content.</p>
+                            <p class="typography-details">Font: 'Segoe UI', size: 0.85rem, weight: 400, color: #666, line-height: 1.5</p>
+                            <p class="typography-usage">Use for captions, notes, and secondary information</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Links & Special Text</h3>
+                    <div class="typography-showcase">
+                        <div class="typography-item">
+                            <a href="#" class="standard-link">This is a standard link</a>
+                            <p class="typography-details">Color: #0078a0, text-decoration: none, hover: underline</p>
+                            <p class="typography-usage">Use for inline text links</p>
+                        </div>
+                        <div class="typography-item">
+                            <span class="highlight-text">This is highlighted text</span>
+                            <p class="typography-details">Font weight: 600, color: #0096c7</p>
+                            <p class="typography-usage">Use to emphasize important information</p>
+                        </div>
+                        <div class="typography-item">
+                            <blockquote>
+                                <p>"Considering the threats to our coastal areas in Florida and the Bahamas, it's clear our fisheries need us more than ever."</p>
+                            </blockquote>
+                            <p class="typography-details">Font style: italic, border-left: 4px solid #66cc99, padding-left: 1rem</p>
+                            <p class="typography-usage">Use for quotes and testimonials</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buttons -->
+        <section id="buttons" class="style-guide-section">
+            <div class="container">
+                <h2 class="section-title">Buttons</h2>
+
+                <div class="style-subsection">
+                    <h3>Primary Buttons</h3>
+                    <div class="button-showcase">
+                        <div class="button-item">
+                            <a href="#" class="btn btn-primary">Primary Button</a>
+                            <div class="button-details">
+                                <p class="button-code">.btn.btn-primary</p>
+                                <p class="button-description">Use for main calls to action and primary user actions</p>
+                            </div>
+                        </div>
+                        <div class="button-item">
+                            <a href="#" class="btn btn-primary btn-sm">Small Primary</a>
+                            <div class="button-details">
+                                <p class="button-code">.btn.btn-primary.btn-sm</p>
+                                <p class="button-description">Use for secondary actions or space-constrained areas</p>
+                            </div>
+                        </div>
+                        <div class="button-item">
+                            <a href="#" class="donate-btn">Donate Button</a>
+                            <div class="button-details">
+                                <p class="button-code">.donate-btn</p>
+                                <p class="button-description">Special button style for donation CTAs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Secondary Buttons</h3>
+                    <div class="button-showcase">
+                        <div class="button-item">
+                            <a href="#" class="btn btn-secondary">Secondary Button</a>
+                            <div class="button-details">
+                                <p class="button-code">.btn.btn-secondary</p>
+                                <p class="button-description">Use for secondary actions alongside primary buttons</p>
+                            </div>
+                        </div>
+                        <div class="button-item">
+                            <a href="#" class="btn btn-outline">Outline Button</a>
+                            <div class="button-details">
+                                <p class="button-code">.btn.btn-outline</p>
+                                <p class="button-description">Use for less prominent actions or as alternatives</p>
+                            </div>
+                        </div>
+                        <div class="button-item">
+                            <a href="#" class="secondary-btn">Alternate Secondary</a>
+                            <div class="button-details">
+                                <p class="button-code">.secondary-btn</p>
+                                <p class="button-description">Alternative secondary style for certain sections</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Text Links & Special Buttons</h3>
+                    <div class="button-showcase">
+                        <div class="button-item">
+                            <a href="#" class="btn-text">Text Button <i class="fas fa-arrow-right"></i></a>
+                            <div class="button-details">
+                                <p class="button-code">.btn-text</p>
+                                <p class="button-description">Use for subtle actions or in-content links</p>
+                            </div>
+                        </div>
+                        <div class="button-item">
+                            <a href="#" class="back-to-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+                            <div class="button-details">
+                                <p class="button-code">.back-to-home</p>
+                                <p class="button-description">Use for navigation back to parent pages</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Button States</h3>
+                    <div class="button-showcase">
+                        <div class="button-item">
+                            <a href="#" class="btn btn-primary" disabled>Disabled Button</a>
+                            <div class="button-details">
+                                <p class="button-code">.btn.btn-primary[disabled]</p>
+                                <p class="button-description">Appearance for disabled button states</p>
+                            </div>
+                        </div>
+                        <div class="button-item">
+                            <a href="#" class="btn btn-primary active">Active Button</a>
+                            <div class="button-details">
+                                <p class="button-code">.btn.btn-primary.active</p>
+                                <p class="button-description">Appearance for active/pressed buttons</p>
+                            </div>
+                        </div>
+                        <div class="button-item">
+                            <a href="#" class="btn btn-primary loading">Loading... <i class="fas fa-spinner fa-spin"></i></a>
+                            <div class="button-details">
+                                <p class="button-code">.btn.btn-primary.loading</p>
+                                <p class="button-description">Appearance for loading state</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards -->
+        <section id="cards" class="style-guide-section">
+            <div class="container">
+                <h2 class="section-title">Cards</h2>
+
+                <div class="style-subsection">
+                    <h3>Program Cards</h3>
+                    <div class="card-showcase">
+                        <div class="program-card" style="position: relative;">
+                            <div class="program-icon">
+                                <i class="fas fa-bolt fa-2x"></i>
+                            </div>
+                            <h3>Emergency Response Management</h3>
+                            <p>Rapid deployment of specialized teams when marine disasters strike, from oil spills to storm debris cleanup.</p>
+                            <a href="#" class="btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        
+                        <div class="card-code">
+                            <pre><code>&lt;div class="program-card"&gt;
+  &lt;a href="page.html" class="card-link-overlay"&gt;&lt;/a&gt;
+  &lt;div class="program-icon"&gt;
+    &lt;i class="fas fa-bolt fa-2x"&gt;&lt;/i&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Card Title&lt;/h3&gt;
+  &lt;p&gt;Card description text here.&lt;/p&gt;
+  &lt;a href="#" class="btn-text"&gt;Learn More &lt;i class="fas fa-arrow-right"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+                            <p>Use for program overview, features, and category navigation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Feature Cards</h3>
+                    <div class="card-showcase">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="images/card-placeholder.jpg" alt="Card image">
+                            </div>
+                            <div class="card-content">
+                                <h3>Feature Card Title</h3>
+                                <p>This type of card includes an image and is used for highlighting key features or initiatives.</p>
+                                <a href="#" class="btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="card-code">
+                            <pre><code>&lt;div class="card"&gt;
+  &lt;div class="card-image"&gt;
+    &lt;img src="image.jpg" alt="Description"&gt;
+  &lt;/div&gt;
+  &lt;div class="card-content"&gt;
+    &lt;h3&gt;Card Title&lt;/h3&gt;
+    &lt;p&gt;Card description text.&lt;/p&gt;
+    &lt;a href="#" class="btn-text"&gt;Learn More &lt;i class="fas fa-arrow-right"&gt;&lt;/i&gt;&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            <p>Use for highlighted content with visual elements.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Stat Cards</h3>
+                    <div class="card-showcase stat-showcase">
+                        <div class="stat">
+                            <span class="stat-number">450+</span>
+                            <span class="stat-label">Tons of Debris Removed</span>
+                        </div>
+                        
+                        <div class="card-code">
+                            <pre><code>&lt;div class="stat"&gt;
+  &lt;span class="stat-number"&gt;450+&lt;/span&gt;
+  &lt;span class="stat-label"&gt;Tons of Debris Removed&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                            <p>Use for highlighting key statistics and impact numbers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Testimonial Cards</h3>
+                    <div class="card-showcase">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"The SeaScaper Nets have revolutionized our cleanup efforts. We used to go through dozens of regular nets each season, but these have lasted through multiple events."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="images/testimonial-placeholder.jpg" alt="Person name">
+                                <div class="author-info">
+                                    <h4>Sarah Johnson</h4>
+                                    <p>Coastal Cleanup Coordinator</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-code">
+                            <pre><code>&lt;div class="testimonial-card"&gt;
+  &lt;div class="testimonial-content"&gt;
+    &lt;p&gt;"Testimonial text here."&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="testimonial-author"&gt;
+    &lt;img src="image.jpg" alt="Name"&gt;
+    &lt;div class="author-info"&gt;
+      &lt;h4&gt;Author Name&lt;/h4&gt;
+      &lt;p&gt;Author Role&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            <p>Use for customer testimonials and quotes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <section id="navigation" class="style-guide-section">
+            <div class="container">
+                <h2 class="section-title">Navigation Elements</h2>
+
+                <div class="style-subsection">
+                    <h3>Main Navigation</h3>
+                    <div class="nav-showcase">
+                        <div class="nav-example">
+                            <ul class="nav-menu example-only">
+                                <li><a href="#" class="active">Home</a></li>
+                                <li class="dropdown">
+                                    <a href="#">Programs <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Program 1</a></li>
+                                        <li><a href="#">Program 2</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="nav-code">
+                            <pre><code>&lt;ul class="nav-menu"&gt;
+  &lt;li&gt;&lt;a href="#" class="active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="dropdown"&gt;
+    &lt;a href="#"&gt;Programs &lt;i class="fas fa-chevron-down"&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;ul class="dropdown-menu"&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Program 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Program 2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                            <p>Main site navigation in header.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Breadcrumbs</h3>
+                    <div class="nav-showcase">
+                        <div class="nav-example">
+                            <div class="breadcrumbs">
+                                <a href="#">Home</a> &gt; 
+                                <a href="#">Products & Services</a> &gt; 
+                                <a href="#">Products</a> &gt; 
+                                <span>Product Name</span>
+                            </div>
+                        </div>
+                        
+                        <div class="nav-code">
+                            <pre><code>&lt;div class="breadcrumbs"&gt;
+  &lt;a href="#"&gt;Home&lt;/a&gt; &amp;gt; 
+  &lt;a href="#"&gt;Products &amp; Services&lt;/a&gt; &amp;gt; 
+  &lt;a href="#"&gt;Products&lt;/a&gt; &amp;gt; 
+  &lt;span&gt;Product Name&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                            <p>Use breadcrumbs on inner pages to show navigation hierarchy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Page Navigation</h3>
+                    <div class="nav-showcase">
+                        <div class="nav-example">
+                            <div class="nav-cards">
+                                <a href="#" class="nav-card">
+                                    <div class="nav-icon">
+                                        <i class="fas fa-info-circle"></i>
+                                    </div>
+                                    <h3>Overview</h3>
+                                </a>
+                                <a href="#" class="nav-card">
+                                    <div class="nav-icon">
+                                        <i class="fas fa-list"></i>
+                                    </div>
+                                    <h3>Features</h3>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="nav-code">
+                            <pre><code>&lt;div class="nav-cards"&gt;
+  &lt;a href="#section1" class="nav-card"&gt;
+    &lt;div class="nav-icon"&gt;
+      &lt;i class="fas fa-info-circle"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;h3&gt;Section Name&lt;/h3&gt;
+  &lt;/a&gt;
+  &lt;!-- More nav cards --&gt;
+&lt;/div&gt;</code></pre>
+                            <p>Use for on-page section navigation on longer pages.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Back Navigation</h3>
+                    <div class="nav-showcase">
+                        <div class="nav-example">
+                            <div class="navigation-buttons">
+                                <a href="#" class="back-to-home">
+                                    <i class="fas fa-arrow-left"></i> Back to Home
+                                </a>
+                                <a href="#" class="back-to-products">
+                                    <i class="fas fa-arrow-left"></i> Back to Products
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="nav-code">
+                            <pre><code>&lt;div class="navigation-buttons"&gt;
+  &lt;a href="index.html" class="back-to-home"&gt;
+    &lt;i class="fas fa-arrow-left"&gt;&lt;/i&gt; Back to Home
+  &lt;/a&gt;
+  &lt;a href="products.html" class="back-to-products"&gt;
+    &lt;i class="fas fa-arrow-left"&gt;&lt;/i&gt; Back to Products
+  &lt;/a&gt;
+&lt;/div&gt;</code></pre>
+                            <p>Use for consistent back navigation on detailed pages.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forms -->
+        <section id="forms" class="style-guide-section">
+            <div class="container">
+                <h2 class="section-title">Forms</h2>
+
+                <div class="style-subsection">
+                    <h3>Text Inputs</h3>
+                    <div class="form-showcase">
+                        <div class="form-example">
+                            <div class="form-group">
+                                <label for="example-name">Name</label>
+                                <input type="text" id="example-name" placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-email">Email</label>
+                                <input type="email" id="example-email" placeholder="Your email">
+                            </div>
+                            <div class="form-group error">
+                                <label for="example-error">Email (Error State)</label>
+                                <input type="email" id="example-error" placeholder="Your email" class="error">
+                                <div class="error-message">Please enter a valid email address</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-code">
+                            <pre><code>&lt;div class="form-group"&gt;
+  &lt;label for="field-id"&gt;Label Text&lt;/label&gt;
+  &lt;input type="text" id="field-id" placeholder="Placeholder"&gt;
+&lt;/div&gt;
+
+&lt;!-- Error state --&gt;
+&lt;div class="form-group error"&gt;
+  &lt;label for="field-error"&gt;Label Text&lt;/label&gt;
+  &lt;input type="text" id="field-error" class="error"&gt;
+  &lt;div class="error-message"&gt;Error message here&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            <p>Standard form inputs with consistent styling.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Select & Textarea</h3>
+                    <div class="form-showcase">
+                        <div class="form-example">
+                            <div class="form-group">
+                                <label for="example-select">Select Option</label>
+                                <select id="example-select">
+                                    <option value="">Choose an option</option>
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="example-textarea">Message</label>
+                                <textarea id="example-textarea" rows="4" placeholder="Your message"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-code">
+                            <pre><code>&lt;div class="form-group"&gt;
+  &lt;label for="select-id"&gt;Select Option&lt;/label&gt;
+  &lt;select id="select-id"&gt;
+    &lt;option value=""&gt;Choose an option&lt;/option&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+
+&lt;div class="form-group"&gt;
+  &lt;label for="textarea-id"&gt;Message&lt;/label&gt;
+  &lt;textarea id="textarea-id" rows="4"&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code></pre>
+                            <p>Dropdown selects and multi-line text inputs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Checkboxes & Radio Buttons</h3>
+                    <div class="form-showcase">
+                        <div class="form-example">
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="checkbox1">
+                                    <span class="checkbox-text">Subscribe to newsletter</span>
+                                </label>
+                            </div>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="radio-example" value="option1">
+                                    <span class="radio-text">Option 1</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="radio-example" value="option2">
+                                    <span class="radio-text">Option 2</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-code">
+                            <pre><code>&lt;div class="checkbox-group"&gt;
+  &lt;label class="checkbox-label"&gt;
+    &lt;input type="checkbox" name="checkbox1"&gt;
+    &lt;span class="checkbox-text"&gt;Label text&lt;/span&gt;
+  &lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div class="radio-group"&gt;
+  &lt;label class="radio-label"&gt;
+    &lt;input type="radio" name="radio-group" value="option1"&gt;
+    &lt;span class="radio-text"&gt;Option 1&lt;/span&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                            <p>Option selectors with custom styling.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Form Layout Example</h3>
+                    <div class="form-showcase">
+                        <div class="form-example">
+                            <form class="contact-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="contact-name">Name</label>
+                                        <input type="text" id="contact-name" placeholder="Your name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-email">Email</label>
+                                        <input type="email" id="contact-email" placeholder="Your email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-subject">Subject</label>
+                                    <input type="text" id="contact-subject" placeholder="Message subject">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-message">Message</label>
+                                    <textarea id="contact-message" rows="4" placeholder="Your message"></textarea>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="form-code">
+                            <pre><code>&lt;form class="contact-form"&gt;
+  &lt;div class="form-row"&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label for="name"&gt;Name&lt;/label&gt;
+      &lt;input type="text" id="name"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label for="email"&gt;Email&lt;/label&gt;
+      &lt;input type="email" id="email"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- More form fields --&gt;
+  &lt;div class="form-actions"&gt;
+    &lt;button type="submit" class="btn btn-primary"&gt;
+      Send Message
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+                            <p>Example of complete form layout with responsive design.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sections -->
+        <section id="sections" class="style-guide-section">
+            <div class="container">
+                <h2 class="section-title">Page Sections</h2>
+
+                <div class="style-subsection">
+                    <h3>Hero Sections</h3>
+                    <div class="section-showcase">
+                        <div class="section-example">
+                            <div class="hero-example">
+                                <div class="hero-content">
+                                    <h1>Section Title</h1>
+                                    <p>Section description text goes here.</p>
+                                    <div class="hero-buttons">
+                                        <a href="#" class="btn btn-primary">Primary CTA</a>
+                                        <a href="#" class="btn btn-secondary">Secondary CTA</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-code">
+                            <pre><code>&lt;section class="page-hero" style="background-image: url('image.jpg');"&gt;
+  &lt;div class="container"&gt;
+    &lt;h1&gt;Section Title&lt;/h1&gt;
+    &lt;p&gt;Section description text goes here.&lt;/p&gt;
+    &lt;div class="hero-buttons"&gt;
+      &lt;a href="#" class="btn btn-primary"&gt;Primary CTA&lt;/a&gt;
+      &lt;a href="#" class="btn btn-secondary"&gt;Secondary CTA&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                            <p>Use for page headers and key landing areas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Feature Highlights</h3>
+                    <div class="section-showcase">
+                        <div class="section-example">
+                            <div class="feature-highlight-example">
+                                <div class="feature-content">
+                                    <div class="feature-image">
+                                        <div class="placeholder-image"></div>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h2>Feature Title</h2>
+                                        <p>Feature description text goes here.</p>
+                                        <div class="feature-actions">
+                                            <a href="#" class="btn btn-primary">CTA Button</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-code">
+                            <pre><code>&lt;section class="feature-highlight"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="feature-content"&gt;
+      &lt;div class="feature-image"&gt;
+        &lt;img src="image.jpg" alt="Feature"&gt;
+      &lt;/div&gt;
+      &lt;div class="feature-text"&gt;
+        &lt;h2&gt;Feature Title&lt;/h2&gt;
+        &lt;p&gt;Feature description text.&lt;/p&gt;
+        &lt;div class="feature-actions"&gt;
+          &lt;a href="#" class="btn btn-primary"&gt;CTA Button&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+                            <p>Use for highlighting key programs or features.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Stats Section</h3>
+                    <div class="section-showcase">
+                        <div class="section-example">
+                            <div class="impact-stats-example">
+                                <h2>Our Impact</h2>
+                                <div class="stats-container-example">
+                                    <div class="stat-example">
+                                        <span class="stat-number">450+</span>
+                                        <span class="stat-label">Impact Metric</span>
+                                    </div>
+                                    <div class="stat-example">
+                                        <span class="stat-number">12K</span>
+                                        <span class="stat-label">Impact Metric</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-code">
+                            <pre><code>&lt;div class="impact-stats"&gt;
+  &lt;h2&gt;Our Impact&lt;/h2&gt;
+  &lt;div class="stats-container"&gt;
+    &lt;div class="stat"&gt;
+      &lt;span class="stat-number"&gt;450+&lt;/span&gt;
+      &lt;span class="stat-label"&gt;Impact Metric&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;!-- More stats --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            <p>Use for highlighting key statistics and impact metrics.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Call to Action Section</h3>
+                    <div class="section-showcase">
+                        <div class="section-example">
+                            <div class="call-to-action-example">
+                                <h2>Call to Action Title</h2>
+                                <p>Description text encouraging user action.</p>
+                                <div class="cta-buttons-example">
+                                    <a href="#" class="primary-btn">Primary CTA</a>
+                                    <a href="#" class="secondary-btn">Secondary CTA</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="section-code">
+                            <pre><code>&lt;div class="call-to-action"&gt;
+  &lt;h2&gt;Call to Action Title&lt;/h2&gt;
+  &lt;p&gt;Description text encouraging user action.&lt;/p&gt;
+  &lt;div class="cta-buttons"&gt;
+    &lt;a href="#" class="primary-btn"&gt;Primary CTA&lt;/a&gt;
+    &lt;a href="#" class="secondary-btn"&gt;Secondary CTA&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            <p>Use at the end of content sections to prompt user engagement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Templates -->
+        <section id="templates" class="style-guide-section">
+            <div class="container">
+                <h2 class="section-title">Page Templates</h2>
+
+                <div class="style-subsection">
+                    <h3>Standard Page Structure</h3>
+                    <div class="template-showcase">
+                        <div class="template-visual">
+                            <div class="template-header"></div>
+                            <div class="template-hero"></div>
+                            <div class="template-content">
+                                <div class="template-section"></div>
+                                <div class="template-section"></div>
+                                <div class="template-cta"></div>
+                            </div>
+                            <div class="template-footer"></div>
+                        </div>
+                        
+                        <div class="template-code">
+                            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Page Title | OceanAid360&lt;/title&gt;
+  &lt;link rel="stylesheet" href="css/styles.css"&gt;
+  &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Skip to Content --&gt;
+  &lt;a href="#main-content" class="skip-to-content"&gt;Skip to main content&lt;/a&gt;
+  
+  &lt;!-- Header --&gt;
+  &lt;header&gt;...&lt;/header&gt;
+  
+  &lt;!-- Main Content --&gt;
+  &lt;main id="main-content"&gt;
+    &lt;!-- Hero Section --&gt;
+    &lt;section class="page-hero"&gt;...&lt;/section&gt;
+    
+    &lt;!-- Page Content --&gt;
+    &lt;section class="section"&gt;...&lt;/section&gt;
+    
+    &lt;!-- Call to Action --&gt;
+    &lt;section class="call-to-action"&gt;...&lt;/section&gt;
+  &lt;/main&gt;
+  
+  &lt;!-- Footer --&gt;
+  &lt;footer&gt;...&lt;/footer&gt;
+  
+  &lt;script src="js/scripts.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                            <p>Basic structure for all pages with proper semantic HTML.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Program/Product Page Template</h3>
+                    <div class="template-showcase">
+                        <div class="template-visual program-template">
+                            <div class="template-header"></div>
+                            <div class="template-hero"></div>
+                            <div class="template-nav"></div>
+                            <div class="template-content">
+                                <div class="template-overview"></div>
+                                <div class="template-features"></div>
+                                <div class="template-stats"></div>
+                                <div class="template-cta"></div>
+                            </div>
+                            <div class="template-footer"></div>
+                        </div>
+                        
+                        <div class="template-description">
+                            <h4>Program/Product Page Sections:</h4>
+                            <ol>
+                                <li><strong>Header:</strong> Standard site header</li>
+                                <li><strong>Hero:</strong> Program-specific hero with title and description</li>
+                                <li><strong>Navigation:</strong> On-page nav cards linking to sections</li>
+                                <li><strong>Overview:</strong> Program/product introduction</li>
+                                <li><strong>Features:</strong> Key features or approach steps</li>
+                                <li><strong>Statistics:</strong> Impact metrics relevant to program</li>
+                                <li><strong>Call to Action:</strong> Engagement prompt</li>
+                                <li><strong>Footer:</strong> Standard site footer</li>
+                            </ol>
+                            <p>Use this template for all program and product detail pages.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-subsection">
+                    <h3>Content Guidelines</h3>
+                    <div class="content-guidelines">
+                        <div class="guideline">
+                            <h4>Voice & Tone</h4>
+                            <ul>
+                                <li>Professional but approachable</li>
+                                <li>Action-oriented and positive</li>
+                                <li>Educational without being overly technical</li>
+                                <li>Emphasize environmental impact and community engagement</li>
+                            </ul>
+                        </div>
+                        <div class="guideline">
+                            <h4>Content Structure</h4>
+                            <ul>
+                                <li>Start with clear, concise headings</li>
+                                <li>Use short paragraphs (3-4 sentences max)</li>
+                                <li>Include bullet points for key information</li>
+                                <li>Feature real impact metrics and success stories</li>
+                                <li>End with clear call to action</li>
+                            </ul>
+                        </div>
+                        <div class="guideline">
+                            <h4>Image Guidelines</h4>
+                            <ul>
+                                <li>Use high-quality, authentic photos of conservation work</li>
+                                <li>Include proper alt text for accessibility</li>
+                                <li>Feature diverse representation in photos with people</li>
+                                <li>Optimize all images for web (reduce file size)</li>
+                                <li>Use consistent aspect ratios within sections</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-widgets">
+                    <!-- About Widget -->
+                    <div class="footer-widget about-widget">
+                        <img src="images/Large Logo Green on White.jpg" alt="OceanAid360" class="footer-logo">
+                        <p>Ocean Aid 360 is a 501(c)(3) non-profit organization dedicated to marine conservation, environmental emergency response, and sustainable recycling initiatives.</p>
+                        <div class="social-links">
+                            <a href="https://facebook.com/oceanaid360" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://instagram.com/oceanaid360" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://twitter.com/oceanaid360" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://linkedin.com/company/oceanaid360" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Links Widget -->
+                    <div class="footer-widget links-widget">
+                        <h4 class="widget-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="emergency.html">Emergency Response</a></li>
+                            <li><a href="shores.html#ghost-trap-rodeo">Ghost Trap Rodeo</a></li>
+                            <li><a href="recycling.html">Recycling Initiatives</a></li>
+                            <li><a href="nonprofit.html#volunteer">Volunteer</a></li>
+                            <li><a href="contact.html#corporate">Corporate Partnerships</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Contact Widget -->
+                    <div class="footer-widget contact-widget">
+                        <h4 class="widget-title">Contact Us</h4>
+                        <ul class="contact-info">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Conservation Way<br>Tampa, FL 33609</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span><a href="tel:+18135551234">(813) 555-1234</a></span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span><a href="mailto:info@OceanAid360.org">info@OceanAid360.org</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Newsletter Widget -->
+                    <div class="footer-widget newsletter-widget">
+                        <h4 class="widget-title">Newsletter</h4>
+                        <p>Stay up to date with our latest news, events, and conservation efforts.</p>
+                        <form class="newsletter-form" action="#" method="post">
+                            <input type="email" name="email" placeholder="Your email address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    <p>&copy; 2025 Ocean Aid 360. All Rights Reserved.</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

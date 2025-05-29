@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanAid360 - Fisheries Monitoring</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- jQuery for loading modular components -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Load the internal header and footer
+            $("#header-container").load("components/header-internal.html", function() {
+                // Re-initialize any header-specific JavaScript if needed
+                initializeHeaderFunctions();
+            });
+            $("#footer-container").load("components/footer.html");
+              $("#impact-container").load("components/impact-stats.html");
+        });
+        
+        // Function to re-initialize any header-specific JavaScript
+        function initializeHeaderFunctions() {
+            // This ensures any event listeners in the header work correctly
+            // For example, mobile menu toggle functionality
+            if (typeof initMobileMenu === 'function') {
+                initMobileMenu();
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Container - THIS WAS MISSING! -->
+    <div id="header-container"></div>
+  
+    
+    <main><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners Section</title>
+    <style>
+        /* Partners Section Styling */
+        .partners-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+
+        .partners-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .partners-category {
+            margin-bottom: 50px;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            color: #2c5282;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .partner-item {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .partner-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .partner-logo {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .partner-content {
+            flex: 1;
+        }
+
+        .partner-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c5282;
+            margin: 0 0 8px 0;
+        }
+
+        .partner-description {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .partners-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .partner-logo {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .partner-item {
+                padding: 30px;
+            }
+            
+            .partner-logo {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+         <section class="page-hero" style="background-image: url('images/ocean-conservation-hero.jfif');">
+        <div class="container">
+           <h1 style="color: white;">Partnering for Impact</h1>
+            <p>Working with Government, Public Organizations, and Industry Partners to dramatically increase the impact our organization can have</p>
+        </div>
+    </section>
+    <section class="partners-section">
+        <div class="partners-container">
+            
+            <!-- Government Partners -->
+            <div class="partners-category">
+                <h2 class="category-title">Government Partners</h2>
+                <div class="partners-grid">
+                    
+                    <div class="partner-item">
+                        <div class="partner-logo">
+                            <img src="images/partners/noaa-logo.png" alt="NOAA Logo">
+                        </div>
+                        <div class="partner-content">
+                            <h3 class="partner-name">National Oceanic and Atmospheric Administration (NOAA)</h3>
+                            <p class="partner-description">Supporting marine habitat restoration programs and providing scientific expertise for ocean conservation initiatives.</p>
+                        </div>
+                    </div>
+
+                    <div class="partner-item">
+                        <div class="partner-logo">
+                            <img src="images/partners/epa-logo.png" alt="EPA Logo">
+                        </div>
+                        <div class="partner-content">
+                            <h3 class="partner-name">Environmental Protection Agency (EPA)</h3>
+                            <p class="partner-description">Collaborating on water quality monitoring and pollution prevention programs in coastal waters.</p>
+                        </div>
+                    </div>
+
+                    <div class="partner-item">
+                        <div class="partner-logo">
+                            <img src="images/partners/fwc-logo.png" alt="FWC Logo">
+                        </div>
+                        <div class="partner-content">
+                            <h3 class="partner-name">Florida Fish and Wildlife Conservation Commission</h3>
+                            <p class="partner-description">Joint efforts in fisheries monitoring, emergency response coordination, and marine species protection.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Public Organization Partners -->
+            <div class="partners-category">
+                <h2 class="category-title">Public Organization Partners</h2>
+                <div class="partners-grid">
+                    
+                    <div class="partner-item">
+                        <div class="partner-logo">
+                            <img src="images/partners/university-logo.png" alt="University Logo">
+                        </div>
+                        <div class="partner-content">
+                            <h3 class="partner-name">University of South Florida Marine Science</h3>
+                            <p class="partner-description">Research collaboration and student internship programs supporting our scientific monitoring efforts.</p>
+                        </div>
+                    </div>
+
+                    <div class="partner-item">
+                        <div class="partner-logo">
+                            <img src="images/partners/aquarium-logo.png" alt="Aquarium Logo">
+                        </div>
+                        <div class="partner-content">
+                            <h3 class="partner-name">Florida Aquarium</h3>
+                            <p class="partner-description">Educational outreach and marine life rehabilitation programs for rescued wildlife.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Industry Partners -->
+            <div class="partners-category">
+                <h2 class="category-title">Industry Partners</h2>
+                <div class="partners-grid">
+                    
+                    <div class="partner-item">
+                        <div class="partner-logo">
+                            <img src="images/partners/marina-logo.png" alt="Marina Logo">
+                        </div>
+                        <div class="partner-content">
+                            <h3 class="partner-name">Tampa Bay Marinas Association</h3>
+                            <p class="partner-description">Implementing sustainable boating practices and marine debris collection programs at member facilities.</p>
+                        </div>
+                    </div>
+
+                    <div class="partner-item">
+                        <div class="partner-logo">
+                            <img src="images/partners/fishing-logo.png" alt="Fishing Industry Logo">
+                        </div>
+                        <div class="partner-content">
+                            <h3 class="partner-name">Gulf Coast Commercial Fishing Association</h3>
+                            <p class="partner-description">Collaborative fisheries monitoring and ghost gear recovery programs with commercial fishing fleets.</p>
+                        </div>
+                    </div>
+
+                    <div class="partner-item">
+                        <div class="partner-logo">
+                            <img src="images/partners/recycling-logo.png" alt="Recycling Company Logo">
+                        </div>
+                        <div class="partner-content">
+                            <h3 class="partner-name">EcoRecycle Solutions</h3>
+                            <p class="partner-description">Processing collected marine debris into recycled products and supporting our circular economy initiatives.</p>
+                        </div>
+                    </div>
+
+                    <div class="partner-item">
+                        <div class="partner-logo">
+                            <img src="images/partners/boat-logo.png" alt="Boat Manufacturer Logo">
+                        </div>
+                        <div class="partner-content">
+                            <h3 class="partner-name">Sustainable Boats Manufacturing</h3>
+                            <p class="partner-description">Developing eco-friendly vessel designs and supporting our emergency response fleet upgrades.</p>
+                        </div>
+                    </div>
+
+                    <div class="partner-item">
+                        <div class="partner-logo">
+                            <img src="images/partners/tech-logo.png" alt="Tech Company Logo">
+                        </div>
+                        <div class="partner-content">
+                            <h3 class="partner-name">Marine Tech Innovations</h3>
+                            <p class="partner-description">Providing advanced monitoring equipment and data analytics solutions for our research programs.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="impact" id="impact-preview">
+    <div class="container">
+     
+           <!-- Impact Stats Container -->
+        <div id="impact-container"></div>
+</section>
+</body>
+</html>
+                
+                <div class="partner-contact">
+                    <h3>Join Our Partnership Network</h3>
+                    <p>Ocean Aid 360 values new partners and invites contact from interested parties, especially commercial anglers and other working watermen and women, interested in contributing to current and future programming.</p>
+                    <p>We invite your ideas and value your feedback!</p>
+                    <a href="mailto:info@OceanAid360.org" class="btn btn-primary">Contact Us Today</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Back to Programs navigation -->
+        <div class="page-navigation container">
+            <a href="index.html" class="btn btn-secondary">← Back to All Programs</a>
+        </div>
+    </main>
+    
+   <!-- Footer Container - REPLACED HARDCODED FOOTER -->
+    <div id="footer-container"></div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

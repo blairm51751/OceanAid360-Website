@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanAid360 - Fisheries Monitoring</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- jQuery for loading modular components -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Load the internal header and footer
+            $("#header-container").load("components/header-internal.html", function() {
+                // Re-initialize any header-specific JavaScript if needed
+                initializeHeaderFunctions();
+            });
+            $("#footer-container").load("components/footer.html");
+        });
+        
+        // Function to re-initialize any header-specific JavaScript
+        function initializeHeaderFunctions() {
+            // This ensures any event listeners in the header work correctly
+            // For example, mobile menu toggle functionality
+            if (typeof initMobileMenu === 'function') {
+                initMobileMenu();
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Container - THIS WAS MISSING! -->
+    <div id="header-container"></div>
+
+
+
+
+ <!-- Hero Section -->
+    <section class="page-hero" style="background-image: url('images/EmergencyResponseBullet.png');">
+        <div class="container">
+           <h1 style="color: white;">OceanAid360 Products and Services</h1>
+            <p>OceanAid360 Product Development LLC designs, develops and sells innovative progrograms to transform marine debris into valuable resources</p>
+        </div>
+    </section>
+
+
+    <!-- Products & Services Overview -->
+    <section class="program-content">
+        <div class="container">
+            <div class="program-overview">
+                <h2>Sustainable Solutions for Marine Environments</h2>
+                <p>Ocean Aid 360 Development LLC offers a range of specialized products and professional services designed to support marine conservation efforts and provide sustainable solutions for ocean environments. Our business operations directly support our nonprofit mission, creating a sustainable model for ongoing conservation work.</p>
+                
+                <p>Explore our product offerings and professional services below to learn how we can help you contribute to a healthier marine ecosystem.</p>
+            </div>
+
+            <!-- Products & Services Grid -->
+            <div class="program-cards">
+                <!-- Products Card -->
+                <div class="program-card" onclick="window.location.href='products.html'" style="cursor: pointer;">
+                    <a href="products.html" class="card-link-overlay"></a>
+                    <div class="program-icon" onclick="window.location.href='products.html'">
+                        <i class="fas fa-box-open fa-2x"></i>
+                    </div>
+                    <h3>Products</h3>
+                    <p>Specialized tools and sustainable products made from recycled marine debris, designed for both conservation efforts and everyday use.</p>
+                    <a href="products.html" class="btn-text">View Products <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Services Card -->
+                <div class="program-card" onclick="window.location.href='services.html'" style="cursor: pointer;">
+                    <a href="services.html" class="card-link-overlay"></a>
+                    <div class="program-icon" onclick="window.location.href='services.html'">
+                        <i class="fas fa-hands-helping fa-2x"></i>
+                    </div>
+                    <h3>Services</h3>
+                    <p>Professional marine services including debris removal, charter boat operations, emergency cleanup, and grant writing consultation.</p>
+                    <a href="services.html" class="btn-text">View Services <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="call-to-action">
+                <h2>Partner With Us</h2>
+                <p>Whether you need specialized products for marine conservation or professional services for your waterfront property or environmental project, our team is ready to help.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="primary-btn">Request a Quote</a>
+                    <a href="about.html" class="secondary-btn">Learn About Our Mission</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+     <!-- Footer Container - REPLACED HARDCODED FOOTER -->
+    <div id="footer-container"></div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

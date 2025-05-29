@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanAid360 - Fisheries Monitoring</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- jQuery for loading modular components -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Load the internal header and footer
+            $("#header-container").load("components/header-internal.html", function() {
+                // Re-initialize any header-specific JavaScript if needed
+                initializeHeaderFunctions();
+            });
+            $("#footer-container").load("components/footer.html");
+        });
+        
+        // Function to re-initialize any header-specific JavaScript
+        function initializeHeaderFunctions() {
+            // This ensures any event listeners in the header work correctly
+            // For example, mobile menu toggle functionality
+            if (typeof initMobileMenu === 'function') {
+                initMobileMenu();
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Container - THIS WAS MISSING! -->
+    <div id="header-container"></div>
+    <!-- Hero Section -->
+    <section class="page-hero" style="background-image: url('images/ocean-conservation-hero.jfif');">
+        <div class="container">
+           <h1 style="color: white;">Our Ocean Conservation Programs</h1>
+            <p>Comprehensive solutions to protect and restore our marine ecosystems</p>
+        </div>
+    </section>
+
+    <!-- Programs Overview Section -->
+    <section class="program-content">
+        <div class="container">
+            <div class="program-overview">
+                <h2>Making Real Impact Through Targeted Programs</h2>
+                <p>At OceanAid360, we've developed five strategic program areas that work together to address the most pressing challenges facing our oceans and coastal communities. Each program tackles a specific aspect of ocean conservation while complementing the others to create a comprehensive approach to marine protection.</p>
+                
+                <p>Explore our programs below to learn how we're taking action and how you can get involved in our mission to save our oceans.</p>
+            </div>
+
+        <!-- Replace the Program Cards section in nonprofit.html with this code -->
+
+<!-- Program Cards Grid - Modified with clickable cards -->
+<div class="program-cards">
+    <!-- Emergency Response Card -->
+    <div class="program-card" onclick="window.location.href='emergency.html'" style="cursor: pointer;">
+        <a href="emergency.html" class="card-link-overlay"></a>
+        <div class="program-icon" onclick="window.location.href='emergency.html'">
+            <i class="fas fa-bolt fa-2x"></i>
+        </div>
+        <h3>Emergency Response Management</h3>
+        <p>Rapid deployment of specialized teams when marine disasters strike, from oil spills to storm debris cleanup.</p>
+        <a href="emergency.html" class="btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <!-- Saving Shores Card -->
+    <div class="program-card" onclick="window.location.href='shores.html'" style="cursor: pointer;">
+        <a href="shores.html" class="card-link-overlay"></a>
+        <div class="program-icon" onclick="window.location.href='shores.html'">
+            <i class="fas fa-water fa-2x"></i>
+        </div>
+        <h3>Saving Shores & Wildlife</h3>
+        <p>Protecting coastal habitats and marine life through habitat restoration, ghost trap retrieval, and wildlife conservation.</p>
+        <a href="shores.html" class="btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <!-- Recycling Card -->
+    <div class="program-card" onclick="window.location.href='recycling.html'" style="cursor: pointer;">
+        <a href="recycling.html" class="card-link-overlay"></a>
+        <div class="program-icon" onclick="window.location.href='recycling.html'">
+            <i class="fas fa-recycle fa-2x"></i>
+        </div>
+        <h3>Recycling the Waste</h3>
+        <p>Transforming marine debris and ghost fishing gear into valuable recycled products and materials.</p>
+        <a href="recycling.html" class="btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <!-- Funding Card -->
+    <div class="program-card" onclick="window.location.href='funding.html'" style="cursor: pointer;">
+        <a href="funding.html" class="card-link-overlay"></a>
+        <div class="program-icon" onclick="window.location.href='funding.html'">
+            <i class="fas fa-hand-holding-usd fa-2x"></i>
+        </div>
+        <h3>Funding the Mission</h3>
+        <p>Innovative approaches to financing our conservation efforts through grants, donations, and sustainable revenue streams.</p>
+        <a href="funding.html" class="btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <!-- Partnering Card -->
+    <div class="program-card" onclick="window.location.href='partnering.html'" style="cursor: pointer;">
+        <a href="partnering.html" class="card-link-overlay"></a>
+        <div class="program-icon" onclick="window.location.href='partnering.html'">
+            <i class="fas fa-handshake fa-2x"></i>
+        </div>
+        <h3>Partnering for Impact</h3>
+        <p>Collaborating with businesses, government agencies, and other nonprofits to amplify our conservation impact.</p>
+        <a href="partnering.html" class="btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+    </div>
+</div>
+
+        
+
+            <!-- Impact Stats Section -->
+            <div class="impact-stats">
+                <h2>Our Collective Impact</h2>
+                <div class="stats-container">
+                    <div class="stat">
+                        <span class="stat-number">38</span>
+                        <span class="stat-label">Emergency Responses Coordinated</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">12,000+</span>
+                        <span class="stat-label">Wildlife Rescued</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">450+</span>
+                        <span class="stat-label">Tons of Debris Removed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">180</span>
+                        <span class="stat-label">Miles of Coastline Protected</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="call-to-action">
+                <h2>Join Our Conservation Efforts</h2>
+                <p>There are many ways to get involved with OceanAid360's programs - from volunteering your time to supporting our work financially. Together, we can make a real difference for our oceans.</p>
+                <div class="cta-buttons">
+                    <a href="volunteer.html" class="primary-btn">Volunteer With Us</a>
+                    <a href="donate.html" class="secondary-btn">Support Our Mission</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container - REPLACED HARDCODED FOOTER -->
+    <div id="footer-container"></div>
+
+    
+    <script src="js/scripts.js"></script>
+</body>
+</html>

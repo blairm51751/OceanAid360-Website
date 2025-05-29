@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanAid360 - Emergency Response Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- jQuery for loading modular components -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Load the internal header and footer
+            $("#header-container").load("components/header-internal.html", function() {
+                // Re-initialize any header-specific JavaScript if needed
+                initializeHeaderFunctions();
+            });
+            $("#footer-container").load("components/footer.html");
+        });
+        
+        // Function to re-initialize any header-specific JavaScript
+        function initializeHeaderFunctions() {
+            // This ensures any event listeners in the header work correctly
+            // For example, mobile menu toggle functionality
+            if (typeof initMobileMenu === 'function') {
+                initMobileMenu();
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero" style="background-image: url('images/EmergencyResponseBullet.png');">
+            <div class="container">
+               <h1 style="color: white;">Emergency Response Management</h1>
+                <p>Rapid deployment of resources and expertise to address environmental emergencies</p>
+            </div>
+        </section>
+<!-- Emergency Page - Three Image Section Using New Component System -->
+<section class="program-content">
+    <div class="container">
+        <div class="program-overview">
+            <!-- Introduction paragraph - CUSTOMIZED FOR EMERGENCY PAGE -->
+            <p class="intro-text">Ocean Aid 360's emergency response team is trained and equipped to address urgent environmental incidents that threaten marine ecosystems. Our rapid deployment capabilities allow us to be on site quickly when disasters strike.</p>
+            
+            <!-- Three images in a horizontal row -->
+            <div class="three-image-grid">
+                <div class="image-card">
+                    <img src="images/RedTideBloom.jfif" alt="Fish Kill">
+                </div>
+                <div class="image-card">
+                    <img src="images/FL Red Tide.jpg" alt="Shore Fish Kill">
+                </div>
+                <div class="image-card">
+                    <img src="images/EmergencyResponseBullet.png" alt="Red Tide">
+                </div>
+            </div>
+            
+            <!-- Content section - CUSTOMIZED FOR EMERGENCY PAGE -->
+            <div class="content-section">
+                <h3>Our Emergency Response Capabilities</h3>
+                <ul class="feature-list">
+                    <li>Oil spill containment and cleanup operations</li>
+                    <li>Red tide mitigation and monitoring</li>
+                    <li>Post-storm debris removal and ecosystem assessment</li>
+                    <li>Hazardous material management in marine environments</li>
+                    <li>Coordination with government agencies during disasters</li>
+                </ul>
+                
+                <p>Our team works closely with local, state, and federal agencies to ensure coordinated and effective response to environmental emergencies. Through training, preparation, and strategic partnerships, we stand ready to protect our marine ecosystems when they face sudden threats.</p>
+                
+                <div class="program-cta">
+                    <a href="contact.html#emergency" class="btn btn-primary">Request Emergency Assistance</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+       
+            
+        <!-- Back to Programs navigation -->
+        <div class="page-navigation container">
+            <a href="index.html" class="btn btn-secondary">← Back to All Programs</a>
+        </div>
+    </main>
+    
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

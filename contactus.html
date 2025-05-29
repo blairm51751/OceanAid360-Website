@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanAid360 - Donate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- jQuery for loading modular components -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Load the common internal header and footer
+            $("#header-container").load("components/header-internal.html", function() {
+                // Re-initialize any header-specific JavaScript if needed
+                initializeHeaderFunctions();
+            });
+            $("#footer-container").load("components/footer.html");
+        });
+        
+        // Function to re-initialize any header-specific JavaScript
+        function initializeHeaderFunctions() {
+            // This ensures any event listeners in the header work correctly
+            // For example, mobile menu toggle functionality
+            if (typeof initMobileMenu === 'function') {
+                initMobileMenu();
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <!-- Page-specific header additions for donate page -->
+    <div class="page-specific-header">
+        <div class="container">
+            <div class="header-right">
+                <a href="login.html" class="log-in">Log In</a>
+                <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+                <a href="donate.html" class="btn btn-primary donate-btn">DONATE</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Image (boat image from screenshot) -->
+        <div class="hero-image">
+            <img src="images/boat-hero.jpg" alt="Conservation boat on water" class="full-width-image">
+        </div>
+        
+        <!-- Donation Content Section -->
+        <section class="donation-section">
+            <div class="container">
+                <h1 class="donation-heading">MAKE A DONATION, SEE THE DIFFERENCE.</h1>
+                
+                <p class="donation-description">
+                    Help us remove derelict traps, nets, and other high priority marine debris endangering our marine ecosystems.
+                </p>
+                
+                <p class="donation-alt-methods">
+                    OA360 also accepts donations via Venmo (Ocean Aid 360) and Check by Mail (125 18th Ave. South, St. Pete, FL 33705)
+                </p>
+                
+                <!-- Donation Form -->
+                <div class="donation-form-container">
+                    <h2 class="form-heading">Donation Form</h2>
+                    <p class="payment-info">OA360 offers hassle-free debit or credit card transactions via PayPal <span class="checkout-note">Checkout tab on Next Page</span></p>
+                    
+                    <form class="donation-form" action="#" method="post">
+                        <!-- Email Address -->
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <!-- Florida Marine Debris Cleanups -->
+                        <div class="form-group">
+                            <label for="florida-donation">Donate to Florida marine debris cleanups</label>
+                            <select id="florida-donation" name="florida-donation">
+                                <option value="">- Select -</option>
+                                <option value="25">$25</option>
+                                <option value="50">$50</option>
+                                <option value="100">$100</option>
+                                <option value="250">$250</option>
+                                <option value="500">$500</option>
+                                <option value="1000">$1000</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Bimini's Coastal Community Cleanup -->
+                        <div class="form-group">
+                            <label for="bimini-donation">Donate to Bimini's Coastal Community Cleanup</label>
+                            <select id="bimini-donation" name="bimini-donation">
+                                <option value="">- Select -</option>
+                                <option value="25">$25</option>
+                                <option value="50">$50</option>
+                                <option value="100">$100</option>
+                                <option value="250">$250</option>
+                                <option value="500">$500</option>
+                                <option value="1000">$1000</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Harbour Island's Coastal Community Cleanup -->
+                        <div class="form-group">
+                            <label for="harbour-donation">Donate to Harbour Island's Coastal Community Cleanup</label>
+                            <select id="harbour-donation" name="harbour-donation">
+                                <option value="">- Select -</option>
+                                <option value="25">$25</option>
+                                <option value="50">$50</option>
+                                <option value="100">$100</option>
+                                <option value="250">$250</option>
+                                <option value="500">$500</option>
+                                <option value="1000">$1000</option>
+                            </select>
+                        </div>
+                        
+                        <!-- About Yourself -->
+                        <div class="form-group">
+                            <label for="about">Tell Us About Yourself</label>
+                            <textarea id="about" name="about" rows="4"></textarea>
+                        </div>
+                        
+                        <!-- Form Submission Button -->
+                        <div class="form-group form-actions">
+                            <button type="submit" class="btn btn-primary next-btn">Next $0</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Chat Widget (appears to be in the bottom right of the page) -->
+        <div class="chat-widget">
+            <button class="chat-button"><i class="fas fa-comments"></i></button>
+        </div>
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript file links -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>

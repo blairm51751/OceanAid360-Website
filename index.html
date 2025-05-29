@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanAid360 | Conservation & Marine Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- jQuery for loading modular components -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Load all modular components
+            $("#header-container").load("components/header-home.html", function() {
+                // Re-initialize any header-specific JavaScript if needed
+                initializeHeaderFunctions();
+            });
+            $("#hero-container").load("components/hero.html");
+            $("#impact-container").load("components/impact-stats.html");
+            $("#cta-container").load("components/cta.html");
+            $("#footer-container").load("components/footer.html");
+        });
+        
+        // Function to re-initialize any header-specific JavaScript
+        function initializeHeaderFunctions() {
+            // This ensures any event listeners in the header work correctly
+            // For example, mobile menu toggle functionality
+            if (typeof initMobileMenu === 'function') {
+                initMobileMenu();
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Accessibility: Skip to content link -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Modular Header Container -->
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section Container -->
+        <div id="hero-container"></div>
+        
+         <!------> <div class="spacer-medium"></div>---->
+
+        <!-- Impact Stats Container -->
+        <div id="impact-container"></div>
+
+        <!-- CTA Section Container -->
+        <div id="cta-container"></div>
+    </main>
+
+    <!-- Modular Footer Container -->
+    <div id="footer-container"></div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

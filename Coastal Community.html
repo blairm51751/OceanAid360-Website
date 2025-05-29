@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs | OceanAid360</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+       <!-- jQuery for loading modular components -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+     <script>
+        $(document).ready(function() {
+            // Load the internal header and footer
+            $("#header-container").load("components/header-internal.html", function() {
+                // Re-initialize any header-specific JavaScript if needed
+                initializeHeaderFunctions();
+            });
+            $("#footer-container").load("components/footer.html");
+        });
+        
+        // Function to re-initialize any header-specific JavaScript
+        function initializeHeaderFunctions() {
+            // This ensures any event listeners in the header work correctly
+            // For example, mobile menu toggle functionality
+            if (typeof initMobileMenu === 'function') {
+                initMobileMenu();
+            }
+        }
+    </script>      if (typeof initMobileMenu === 'function') {
+                initMobileMenu();
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/Large Logo Green on White.jpg" alt="OceanAid360 Logo">
+                </a>
+            </div>
+            <nav>
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="nonprofit.html" class="active">Our Programs <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="emergency.html">Emergency Response</a></li>
+                            <li><a href="shores.html">Saving Shores & Wildlife</a></li>
+                            <li><a href="recycling.html">Recycling the Waste</a></li>
+                            <li><a href="funding.html">Funding the Mission</a></li>
+                            <li><a href="partnering.html">Partnering for Impact</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cta-button">
+                <a href="donate.html" class="donate-btn">Donate</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Back to Home Button -->
+    <div class="container">
+        <a href="index.html" class="back-to-home">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+    </div>
+  <main>
+
+    <!-- Hero Section -->
+    <section class="page-hero" style="background-image: url('images/EmergencyResponseBullet.png');">
+        <div class="container">
+           <h1 style="color: white;">Coastal Community Programming</h1>
+            <p>Empowering local communities to protect their marine resources</p>
+        </div>
+    </section>
+
+
+ <section class="program-content">
+    <div class="container">
+        <div class="program-overview">
+            <!-- Introduction paragraph -->
+            <p style="color: #000; font-size: 1.2rem; line-height: 1.6; margin-bottom: 30px;"> Ocean Aid 360 is focused on empowering coastal communities, through education and clear pathways, to address challenges impacting adjacent marine habitat and resources.</p>
+                        <p>We believe that by working directly with those who live in close proximity to vulnerable watersheds, Ocean Aid 360 can have a positive impact on issue awareness, strengthening of marine resource stewardship, and evidence-driven collective responses focused on resource restoration and resilience.</p>
+
+            
+            <!-- Three images in a horizontal row -->
+                      <div class="emergency-images" style="display: flex; justify-content: space-between; margin-bottom: 40px;">
+    <div class="emergency-image" style="width: 32%; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; height: 200px;">
+        <img src="images/coastalcommunity1.png" alt="Fish Kill" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+    <div class="emergency-image" style="width: 32%; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; height: 200px;">
+        <img src="images/coastalcommunity2.jfif" alt="Shore Fish Kill" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+    <div class="emergency-image" style="width: 32%; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; height: 200px;">
+        <img src="images/coastalcommunity3.jfif" alt="Red Tide" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+</div>
+           <h2>Our Community Programs:</h2>
+                        
+                        <div class="program-highlight">
+                            <h3>Coast Busters Education Initiative</h3>
+                            <p style="color: #000; font-size: 1.2rem; line-height: 1.6; margin-top: 40px;">In 2017, our staff led the design of "Coast Busters: Delivering education and awareness to upstream and underserved communities to decrease litter, propelled by rain and tide as marine debris, into the Tampa Bay estuary." This program focuses on:</p>
+                            <ul>
+                                <li>Marine resource stewardship concepts at the primary school level</li>
+                                <li>Traveling theater performances to engage young audiences</li>
+                                <li>Science class lesson plans focused on marine habitat health</li>
+                                <li>Marine resource ambassadors component to expand conservation concepts</li>
+                            </ul>
+                        </div>
+ <p style="color: #000; font-size: 1.2rem; line-height: 1.6; margin-top: 40px;"> </p>
+
+                         <div class="program-highlight">
+ <h3><a href="ghosttrap.html">Ghost Trap Rodeo</a></h3>
+
+                          <p style="color: #000; font-size: 1.2rem; line-height: 1.6; margin-top: 40px;">In 2018, Ocean Aid 360 expanded its commitment to community-led marine resource conservation, through the design and delivery of The Ghost Trap Rodeo event series. This program focuses on:</p>
+                            <ul>
+                                <li>The Ghost Trap Rodeo educates and mobilizes local anglers, recreational and commercial, and other concerned resource user groups</li>
+                                <li>Detects and removes derelict/abandoned crab traps and marine debris</li>
+                                                               <li>Carries out a bycatch species inventory and marine debris mapping exercise to expand state and federal data sets which inform the targeting and allocation of future watershed cleanup resources</li>
+                            </ul>
+                        </div>
+
+                        <p>Our staff is intent on promoting coastal community-level collaboration as a driver of change. We believe that listening and collaborative investigations can result in evidence-based solutions to complex challenges facing marine resources. We aim to promote citizen science, community-wide stewardship and conservation ethic, as safeguards against increasing demands on shared marine resources.</p>
+
+
+            
+               </div>
+    </div>
+</section>
+        
+        <!-- Back to Programs navigation -->
+        <div class="page-navigation container">
+            <a href="index.html" class="btn btn-secondary">← Back to All Programs</a>
+        </div>
+    </main>
+
+    
+  
+           
+    <!-- Footer (same on all pages) -->
+    <footer>
+        <!-- Your existing footer code -->
+    </footer>
+</body>
+</html>

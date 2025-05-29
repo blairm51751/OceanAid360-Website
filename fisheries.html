@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanAid360 - Fisheries Monitoring</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- jQuery for loading modular components -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Load the internal header and footer
+            $("#header-container").load("components/header-internal.html", function() {
+                // Re-initialize any header-specific JavaScript if needed
+                initializeHeaderFunctions();
+            });
+            $("#footer-container").load("components/footer.html");
+        });
+        
+        // Function to re-initialize any header-specific JavaScript
+        function initializeHeaderFunctions() {
+            // This ensures any event listeners in the header work correctly
+            // For example, mobile menu toggle functionality
+            if (typeof initMobileMenu === 'function') {
+                initMobileMenu();
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Container - THIS WAS MISSING! -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="page-hero" style="background-image: url('images/EmergencyResponseBullet.png');">
+        <div class="container">
+           <h1 style="color: white;">Fisheries Monitoring</h1>
+            <p>Science-based assessment and conservation of marine fisheries resources</p>
+        </div>
+    </section>
+
+    <!-- Program Navigation -->
+    <section class="program-nav">
+        <div class="container">
+            <div class="nav-cards">
+                <a href="#overview" class="nav-card">
+                    <div class="nav-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>Overview</h3>
+                </a>
+                <a href="#methods" class="nav-card">
+                    <div class="nav-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Monitoring Methods</h3>
+                </a>
+                <a href="#projects" class="nav-card">
+                    <div class="nav-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Current Projects</h3>
+                </a>
+                <a href="#volunteer" class="nav-card">
+                    <div class="nav-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Get Involved</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Program Overview -->
+        <section id="overview" class="program-content">
+            <div class="container">
+                <div class="program-overview">
+                    <h2>Program Overview</h2>
+                    <p>OceanAid360's Fisheries Monitoring program applies scientific methodologies to assess and track the health of fish populations and their habitats. We gather critical data that informs conservation strategies and sustainable fishing practices to ensure the long-term viability of marine resources.</p>
+                    
+                    <div class="program-image">
+                        <img src="images/fisheries-monitoring.jpg" alt="Fisheries monitoring team collecting data">
+                    </div>
+                    
+                    <p>Through collaboration with recreational and commercial anglers, government agencies, and scientific institutions, we establish comprehensive baselines and track changes over time. This data-driven approach allows us to identify threats to fisheries health and develop effective intervention strategies.</p>
+                </div>
+            </div>
+        </section>
+
+<!-- Monitoring Methods Section -->
+<section id="methods" class="program-content bg-light">
+    <div class="container">
+        <h2>Our Monitoring Methods</h2>
+        
+        <div class="six-feature-grid">
+            <div class="feature-item">
+                <i class="fas fa-ruler fa-2x"></i>
+                <h3>Catch Surveys</h3>
+                <p>Collection and analysis of catch data from recreational and commercial anglers to track fish populations and demographics.</p>
+            </div>
+            
+            <div class="feature-item">
+                <i class="fas fa-water fa-2x"></i>
+                <h3>Water Quality Testing</h3>
+                <p>Regular sampling and analysis of water quality parameters that impact fisheries health, including temperature, salinity, and dissolved oxygen.</p>
+            </div>
+            
+            <div class="feature-item">
+                <i class="fas fa-tag fa-2x"></i>
+                <h3>Tagging Programs</h3>
+                <p>Implementation of fish tagging initiatives to track migration patterns, growth rates, and habitat usage of key species.</p>
+            </div>
+            
+            <div class="feature-item">
+                <i class="fas fa-map-marked-alt fa-2x"></i>
+                <h3>Habitat Mapping</h3>
+                <p>Comprehensive mapping of critical fish habitats, including seagrass beds, reefs, and mangrove areas to guide protection efforts.</p>
+            </div>
+            
+            <div class="feature-item">
+                <i class="fas fa-satellite fa-2x"></i>
+                <h3>Remote Monitoring</h3>
+                <p>Deployment of autonomous monitoring systems that collect continuous data on environmental conditions affecting fisheries.</p>
+            </div>
+            
+            <div class="feature-item">
+                <i class="fas fa-flask fa-2x"></i>
+                <h3>Genetic Sampling</h3>
+                <p>Collection and analysis of genetic material to assess fish population structures and biodiversity within marine ecosystems.</p>
+            </div>
+        </div>
+        
+        <p class="section-summary">Our monitoring methods are designed to provide comprehensive data while minimizing impacts on the marine environment. We adhere to strict scientific protocols and regularly update our methods based on emerging best practices in fisheries science.</p>
+    </div>
+</section>
+
+        
+   
+       <!-- Current Projects Section -->
+<section id="projects" class="program-content">
+    <div class="container">
+        <h2>Current Monitoring Projects</h2>
+        
+        <div class="project-stories">
+            <div class="story-card">
+                <div class="story-image">
+                    <img src="images/snookmonitoring.jfif" alt="Snook Monitoring Project">
+                </div>
+                <div class="story-content">
+                    <h3>Tampa Bay Snook Population Assessment</h3>
+                    <p>Our flagship monitoring project tracks the recovery of snook populations following red tide events and cold weather mortality. Through catch surveys, tagging, and genetic sampling, we're documenting population trends and identifying critical habitats for this economically important sportfish.</p>
+                    <p>This multi-year study has already produced valuable data on snook movement patterns and habitat preferences that is informing regional conservation planning.</p>
+                </div>
+            </div>
+            
+            <div class="story-card">
+                <div class="story-image">
+                    <img src="images/seagrassmonitoring.jfif" alt="Seagrass Monitoring">
+                </div>
+                <div class="story-content">
+                    <h3>Seagrass Health Monitoring Network</h3>
+                    <p>Our volunteer-powered seagrass monitoring network conducts regular assessments of seagrass bed health, coverage, and species composition across Tampa Bay. As critical nursery habitat for numerous fish species, healthy seagrass is essential for sustainable fisheries.</p>
+                    <p>Data from this program has helped identify areas of seagrass loss and informed targeted restoration projects with our partner organizations.</p>
+                </div>
+            </div>
+            
+            <div class="story-card">
+                <div class="story-image">
+                    <img src="images/juvenilefish.jfif" alt="Juvenile Fish Survey">
+                </div>
+                <div class="story-content">
+                    <h3>Juvenile Fish Recruitment Survey</h3>
+                    <p>This ongoing survey monitors the recruitment of juvenile fish to estuarine habitats, providing an early indicator of future fishery health. Using standardized sampling methods, we track year-to-year variations in juvenile fish abundance and diversity.</p>
+                    <p>Results from this project help forecast fishing conditions 1-3 years in advance and identify potential issues requiring management attention.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+     <!-- Impact Stats Section -->
+<section class="impact-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Fisheries Monitoring Impact</h2>
+            <p>Data-driven results from our monitoring programs</p>
+        </div>
+        <div class="stats-grid stats-four">
+           
+  
+   <div class="stat-item">
+    <div class="stat-image">
+        <img src="images/coastbusters.png" alt="Data Collection">
+    </div>
+    <div class="stat-text-content">
+        <span class="stat-number">5+</span>
+        <p class="stat-description">Years of Continuous Data</p>
+    </div>
+</div>         
+     <div class="stat-item">
+    <div class="stat-image">
+        <img src="images/coastbusters.png" alt="Monitoring Sites">
+    </div>
+    <div class="stat-text-content">
+        <span class="stat-number">24</span>
+        <p class="stat-description">Monitoring Sites</p>
+    </div>
+</div>                
+      <div class="stat-item">
+    <div class="stat-image">
+        <img src="images/coastbusters.png" alt="Fish Tagged">
+    </div>
+    <div class="stat-text-content">
+        <span class="stat-number">3500</span>
+        <p class="stat-description">Fish Tagged & Released</p>
+    </div>
+</div>               
+        <div class="stat-item">
+    <div class="stat-image">
+        <img src="images/coastbusters.png" alt="Citizen Scientists">
+    </div>
+    <div class="stat-text-content">
+        <span class="stat-number">120</span>
+        <p class="stat-description">Trained Citizen Scientists</p>
+    </div>
+</div>       
+
+
+        </div>
+    </div>
+</section>
+
+        <!-- Volunteer Section -->
+        <section id="volunteer" class="call-to-action">
+            <h2>Join Our Fisheries Monitoring Team</h2>
+            <p>Our monitoring programs rely on dedicated volunteers and citizen scientists to collect and process data. No prior experience is necessary - we provide all training and equipment needed to participate.</p>
+            <div class="cta-buttons">
+                <a href="volunteer.html#fisheries" class="primary-btn">Become a Volunteer</a>
+                <a href="contact.html#data" class="secondary-btn">Request Fisheries Data</a>
+            </div>
+            <p class="mt-4"><small>All monitoring activities are conducted under appropriate scientific permits and follow strict ethical guidelines for fish handling and data collection.</small></p>
+        </section>
+    </main>
+
+    <!-- Footer Container - REPLACED HARDCODED FOOTER -->
+    <div id="footer-container"></div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

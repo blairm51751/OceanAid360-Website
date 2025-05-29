@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanAid360 - Fisheries Monitoring</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- jQuery for loading modular components -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Load the internal header and footer
+            $("#header-container").load("components/header-internal.html", function() {
+                // Re-initialize any header-specific JavaScript if needed
+                initializeHeaderFunctions();
+            });
+            $("#footer-container").load("components/footer.html");
+        });
+        
+        // Function to re-initialize any header-specific JavaScript
+        function initializeHeaderFunctions() {
+            // This ensures any event listeners in the header work correctly
+            // For example, mobile menu toggle functionality
+            if (typeof initMobileMenu === 'function') {
+                initMobileMenu();
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Container - THIS WAS MISSING! -->
+    <div id="header-container"></div>
+
+
+    <!-- Page Hero Section -->
+    <section class="page-hero" style="background-image: url('images/merchandise-hero.jpg');">
+        <div class="container">
+            <h1 style="color: white;">OA360 Merchandise</h1>
+            <p>Support our mission with official OceanAid360 apparel</p>
+        </div>
+    </section>
+
+    <!-- Product Detail Content -->
+    <section class="program-content">
+        <div class="container">
+            <!-- Product Overview -->
+            <div class="program-overview">
+                <h2>SHOP PRODUCTS</h2>
+                <p>Your Purchase Supports Marine Debris Cleanup</p>
+                
+                <!-- Products Display -->
+                <div class="merchandise-grid">
+                    <!-- GTR T-Shirt Product -->
+                    <div class="merchandise-item">
+                        <div class="product-images">
+                            <img src="images/gtr-tshirt-blue.jpg" alt="The GTR T-Shirt in Blue Steel" class="product-image">
+                            <img src="images/gtr-tshirt-green.jpg" alt="The GTR T-Shirt in Army Green" class="product-image-alt">
+                        </div>
+                        <div class="product-details">
+                            <h3>The GTR T-Shirt</h3>
+                            <div class="price">$25.00</div>
+                            
+                            <div class="product-options">
+                                <div class="option-group">
+                                    <label for="gtr-shirt-size">Size</label>
+                                    <select id="gtr-shirt-size" class="product-select">
+                                        <option value="" selected disabled>Select Size</option>
+                                        <option value="S">Small</option>
+                                        <option value="M">Medium</option>
+                                        <option value="L">Large</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="option-group">
+                                    <label for="gtr-shirt-color">Color</label>
+                                    <select id="gtr-shirt-color" class="product-select">
+                                        <option value="" selected disabled>Select Color</option>
+                                        <option value="blue-steel">Blue Steel</option>
+                                        <option value="army-green">Army Green</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button class="add-to-cart-btn" data-product="tshirt">Add to Cart</button>
+                            
+                            <div class="product-description">
+                                <p>Show your support for the Ghost Trap Rodeo program with this comfortable and durable t-shirt. Features the GTR logo on the front and event details on the back.</p>
+                                <ul class="product-features">
+                                    <li>100% organic cotton</li>
+                                    <li>Pre-shrunk fabric</li>
+                                    <li>Unisex fit</li>
+                                    <li>Screen-printed design</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- GTR Tank Top Product -->
+                    <div class="merchandise-item">
+                        <div class="product-images">
+                            <img src="images/gtr-tank-merlot.jpg" alt="The GTR Tank Top in Merlot" class="product-image">
+                            <img src="images/gtr-tank-seafoam.jpg" alt="The GTR Tank Top in Seafoam" class="product-image-alt">
+                        </div>
+                        <div class="product-details">
+                            <h3>The GTR Tank Top</h3>
+                            <div class="price">$25.00</div>
+                            
+                            <div class="product-options">
+                                <div class="option-group">
+                                    <label for="gtr-tank-size">Size</label>
+                                    <select id="gtr-tank-size" class="product-select">
+                                        <option value="" selected disabled>Select Size</option>
+                                        <option value="S">Small</option>
+                                        <option value="M">Medium</option>
+                                        <option value="L">Large</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="option-group">
+                                    <label for="gtr-tank-color">Color</label>
+                                    <select id="gtr-tank-color" class="product-select">
+                                        <option value="" selected disabled>Select Color</option>
+                                        <option value="merlot">Merlot</option>
+                                        <option value="seafoam">Seafoam</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                           <button class="add-to-cart-btn" data-product="tanktop">Add to Cart</button>
+                            
+                            <div class="product-description">
+                                <p>Perfect for warm weather cleanups or casual wear, this tank top features the Ghost Trap Rodeo logo on the front and event schedule on the back.</p>
+                                <ul class="product-features">
+                                    <li>Lightweight tri-blend fabric</li>
+                                    <li>Flattering fit</li>
+                                    <li>Quick-drying material</li>
+                                    <li>Eco-friendly screen printing</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Environmental Impact -->
+            <div class="environmental-impact">
+                <h2>Environmental Impact</h2>
+                <div class="impact-content">
+                    <div class="impact-text">
+                        <p>Every purchase of OceanAid360 merchandise directly supports our marine conservation programs and debris cleanup efforts. Here's how your purchase makes a difference:</p>
+                        <ul class="impact-list">
+                            <li><strong>10% of proceeds</strong> go directly to funding Ghost Trap Rodeo events</li>
+                            <li><strong>Sustainable materials</strong> reduce environmental impact</li>
+                            <li><strong>Ethical manufacturing</strong> ensures fair labor practices</li>
+                            <li><strong>Plastic-free packaging</strong> eliminates waste</li>
+                        </ul>
+                        <p>When you wear OceanAid360 merchandise, you're not just making a fashion statement—you're making a statement about your commitment to our oceans.</p>
+                    </div>
+                    <div class="impact-image">
+                        <img src="images/merchandise-impact.jpg" alt="Environmental impact of OceanAid360 merchandise">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="call-to-action">
+                <h2>Support Our Mission</h2>
+                <p>Looking for other ways to support marine conservation? Check out our other products or consider making a direct donation to OceanAid360.</p>
+                <div class="cta-buttons">
+                    <a href="products.html" class="primary-btn">View All Products</a>
+                    <a href="donate.html" class="secondary-btn">Make a Donation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Popup -->
+    <div id="cart-popup" class="cart-popup">
+        <div class="cart-popup-content">
+            <div class="cart-popup-header">
+                <h3>MY CART <span id="cart-count">(0 items)</span></h3>
+                <button class="close-popup">&times;</button>
+            </div>
+            <div class="cart-popup-body">
+                <div class="cart-item">
+                    <div class="cart-item-image">
+                        <img id="cart-item-image" src="" alt="Product image">
+                    </div>
+                    <div class="cart-item-details">
+                        <h4 id="cart-item-name"></h4>
+                        <p id="cart-item-price"></p>
+                        <p id="cart-item-size">Size: <span></span></p>
+                        <p>More Details <i class="fas fa-chevron-down"></i></p>
+                    </div>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="text" value="1" class="quantity-input" readonly>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <div class="cart-item-subtotal" id="cart-item-subtotal"></div>
+                    <button class="remove-item"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+            <div class="cart-popup-footer">
+                <div class="cart-subtotal">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <a href="cart-page.html" class="view-cart-btn">View Cart</a>
+            </div>
+        </div>
+    </div>
+ <!-- Footer Container - REPLACED HARDCODED FOOTER -->
+    <div id="footer-container"></div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,3192 @@
+/*_______________________________________________________________
+Additional Customization Tips
+	1. Spacing: For consistent spacing changes:
+		○ Search for padding and margin values
+		○ Common values: 1rem = 16px, 1.5rem = 24px, 2rem = 32px
+	2. Colors: For consistent branding:
+		○ Create a color palette at the top of your file with CSS variables
+		○ Use search and replace to implement color changes throughout
+	3. Animation Effects:
+		○ Look for transition properties (control animation speed)
+		○ Hover effects use transform properties for movements
+	4. Background Images:
+		○ Find the hero-bg-image declarations to change background images
+		○ Adjust background: rgba(0, 0, 0, 0.4) to make overlays darker/lighter
+	5. Cards and Elements:
+		○ Adjust border-radius values for more/less rounded corners
+		○ Modify box-shadow to change depth/prominence of elements
+The CSS includes detailed comments for the impact section specifically, which should help you make targeted changes to those elements.
+___________________________________________________________________*/
+
+/* Accessibility Enhancement - Skip Link */
+.skip-to-content {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1em;
+    background-color: white;
+    color: #004d66;
+    text-decoration: none;
+    transition: left 0.3s ease;
+}
+.skip-to-content:focus {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+}
+/* 
+   OceanAid360 Website Styles
+   Main stylesheet for all pages
+   Updated version for multi-page architecture
+*/
+
+/*--------------------------------------------------------------
+# Basic Reset & Global Styles
+--------------------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Basic Structure and Resets
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+Purpose: This universal selector removes all default margins and padding from elements and ensures box sizes include padding and borders. Customization: Generally keep this as is - it's a standard reset to ensure consistent display across browsers.
+*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #0078a0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/*______________________________________________________________________________________________
+Container and Layout
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+Purpose: Creates a responsive container that's centered with margins on both sides. Customization:
+	• Change max-width to make your site wider or narrower
+	• Change width percentage to adjust how much screen space is used on smaller devices
+_______________________________________________________________________________________________*/
+/*--------------------------------------------------------------
+# Typography & Headings
+Typography System
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.2;
+    color: #333;
+}
+Purpose: Sets consistent styling for all heading elements. Customization:
+	• Change font-family to use different fonts
+	• Adjust line-height to increase or decrease spacing between lines
+	• Modify color to change the text color of all headings
+The section headings have specific styles:
+.section-title h2 {
+    font-size: 2.2rem;
+    color: #004d66;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+Purpose: Styles section headings specifically Customization:
+	• Change font-size to make headings larger or smaller
+	• Adjust color to change heading color
+	• Modify font-weight to make headings bolder or lighter
+
+Colors and Brand Identity
+Your site uses several consistent colors:
+	• #004d66, #0078a0, #0096c7: Different shades of blue
+	• #66cc99: Green accent color
+	• #333, #444: Dark gray for text
+	• #f8f9fa, #f5f5f5: Light gray for backgrounds
+Customization: To rebrand, search and replace these color codes throughout the CSS file.
+
+--------------------------------------------------------------*/
+/* Base heading styles that apply to all headings */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.2;
+    color: #333;
+}
+
+/* Page title (main H1) */
+.page-title {
+    font-size: 3rem;
+    margin-bottom: 1.2rem;
+    color: #00547a;
+    font-weight: 700;
+}
+
+/* Section headings (H2) */
+.section-title h2 {
+    font-size: 2.2rem;
+    color: #004d66;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Subsection headings (H3) */
+.feature h3, 
+.program-card h3,
+.widget-title,
+.subsection-title {
+    font-size: 1.5rem;
+    color: #004d66;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+/* Ensure proper heading hierarchy for hero sections */
+.hero-section h1 {
+    font-size: 3rem;
+    color: #00547a;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+
+/*--------------------------------------------------------------
+# Header & Navigation - New Structure
+
+Header and Navigation
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+Purpose: Creates a sticky header that stays at the top when scrolling Customization:
+	• Change background-color to change header background
+	• Remove position: sticky if you don't want the header to stick
+	• Adjust box-shadow to change the shadow effect (or remove it)
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+Purpose: Creates a horizontal navigation menu Customization:
+	• Change to flex-direction: column if you want a vertical menu
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s;
+    z-index: 1001;
+}
+Purpose: Creates dropdown menus that appear on hover Customization:
+	• Change min-width to adjust dropdown width
+	• Modify background-color and box-shadow for visual appearance
+Adjust transition timing for faster/slower animations
+
+
+--------------------------------------------------------------*/
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo img {
+    height: 60px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav-menu a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: #0096c7;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s;
+    z-index: 1001;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 20px;
+    color: #333;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+.donate-btn {
+    background-color: #0096c7;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.donate-btn:hover {
+    background-color: #00b4d8;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+/* Legacy Header & Navigation Support */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo span {
+    color: #66cc99;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #004d66;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.main-nav .nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav .nav-menu > li {
+    position: relative;
+    margin: 0 0.5rem;
+}
+
+.main-nav .nav-menu > li > a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    display: block;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+/* Simplified Header for Content Pages */
+.simple-header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    padding: 10px 0;
+}
+
+.simple-header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.minimal-nav {
+    display: flex;
+    align-items: center;
+}
+
+.home-link {
+    display: flex;
+    align-items: center;
+    color: #004d66;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: #f0f8f4;
+    transition: all 0.3s ease;
+}
+
+.home-link i {
+    margin-right: 8px;
+}
+
+.home-link:hover {
+    background-color: #e6f7ef;
+    transform: translateX(-5px);
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+
+# Hero Section in the OceanAid360 Website
+
+The hero section is the large, prominent area that appears at the top of a webpage immediately after the header. It's designed to make a strong first impression, communicate the core message of the website, and encourage visitors to take action.
+
+In your OceanAid360 website, I can see that the hero section is implemented in several ways:
+
+## Where It's Used Across the Website
+
+1. **Homepage (index.html)**: The main hero with a background grid of multiple images and a semi-transparent text container
+2. **Program Pages**: Simpler hero sections with a title, subtitle, and possibly a background image
+3. **Content Pages**: More minimal hero sections that establish the page context
+
+## Anatomy of Your Hero Section
+
+Looking at your CSS, the hero section consists of:
+
+```css
+.hero {
+    padding: 4rem 0;
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('../images/hero-bg.jpg') center/cover no-repeat;
+}
+```
+
+This creates a full-height banner with a background image and gradient overlay.
+
+For the homepage specifically, you have an alternative hero implementation with multiple images:
+
+```css
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    padding: 5px;
+    z-index: 0;
+}
+
+.hero-bg-image {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border: 3px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+```
+
+This creates a grid of 5 background images with white borders between them.
+
+## What You Can Customize & Their Impact
+
+### 1. Height and Space
+
+```css
+.hero {
+    min-height: 80vh;
+    padding: 4rem 0;
+}
+```
+
+**Customization Options**:
+- Change `min-height: 80vh` to make the hero taller or shorter
+  - Increase (e.g., `90vh` or `100vh`) for a full-screen hero
+  - Decrease (e.g., `60vh`) for a more compact hero
+- Adjust `padding` to change the internal spacing
+
+**Impact**: Changing the height affects how much of the initial screen is occupied by the hero. A taller hero creates drama but pushes content below the fold; a shorter hero allows users to see more content without scrolling.
+
+### 2. Background Images
+
+```css
+.hero {
+    background: linear-gradient(...), url('../images/hero-bg.jpg') center/cover no-repeat;
+}
+
+/* For multi-image hero */
+.hero-bg-image:nth-child(1) {
+    background-image: url('../images/GhostTrapPicture.jpg');
+}
+.hero-bg-image:nth-child(2) {
+    background-image: url('../images/defuncttraps.jpg');
+}
+/* etc. */
+```
+
+**Customization Options**:
+- Change the image paths to use different background images
+- Modify the gradient overlay: `linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4))`
+  - Adjust opacity values (`0.6` and `0.4`) to make the overlay more/less transparent
+  - Change colors (`rgba(0, 0, 0, ...)` is black)
+- For multi-image hero, change the number of columns: `grid-template-columns: repeat(5, 1fr)`
+  - Increase/decrease the number to show more/fewer images
+
+**Impact**: Background images establish the visual theme and mood of your site. The overlay controls how readable text is over the image. More transparency shows more of the image but may reduce text readability.
+
+### 3. Text Container Styling
+
+```css
+.hero-text-container {
+    background-color: rgba(50, 50, 50, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    margin: 0 auto 30px;
+    max-width: 800px;
+    text-align: center;
+}
+```
+
+**Customization Options**:
+- Change `background-color: rgba(50, 50, 50, 0.7)` to adjust the text background
+  - Modify color values (50, 50, 50 is dark gray)
+  - Adjust opacity (0.7) to make it more/less transparent
+- Change `max-width: 800px` to make the text container wider/narrower
+- Adjust `border-radius: 10px` for more/less rounded corners
+- Change `text-align: center` to `left` or `right` to align text differently
+
+**Impact**: The text container affects readability and focus. A more opaque background makes text easier to read but covers more of the hero image. Width adjustments control how wide your text content appears.
+
+### 4. Typography
+
+```css
+.hero-text-container h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text-container p {
+    color: #f0f0f0;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    max-width: 700px;
+    line-height: 1.6;
+}
+```
+
+**Customization Options**:
+- Change `font-size: 2.5rem` for headings to make them larger/smaller
+- Adjust `line-height` values to increase/decrease space between lines
+- Modify `text-shadow` for more/less pronounced shadow effects
+- Change `max-width: 700px` for paragraphs to control line length
+
+**Impact**: Typography changes affect readability and emphasis. Larger fonts draw more attention but display less text. Line height affects how dense or spacious text appears. Text shadows can improve readability over complex backgrounds.
+
+### 5. Call-to-Action Buttons
+
+```css
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.hero-buttons .btn {
+    margin: 0.5rem;
+    white-space: normal;
+    text-align: center;
+    padding: 1rem 1.5rem;
+}
+```
+
+**Customization Options**:
+- Change `justify-content: flex-start` to:
+  - `center` to center buttons
+  - `space-between` to spread buttons across container
+- Adjust `gap: 1rem` to increase/decrease space between buttons
+- Modify button styling through the `.btn`, `.btn-primary`, etc. classes
+
+**Impact**: Button alignment and styling significantly impact user conversion. Centered buttons create a clean, focused look. Larger, more prominent buttons attract more attention and clicks.
+
+### 6. Responsive Behavior
+
+```css
+@media (max-width: 768px) {
+    .hero-text-container {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .hero-text-container h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-text-container p {
+        font-size: 1rem;
+    }
+}
+```
+
+**Customization Options**:
+- Adjust `max-width: 768px` to change when mobile styles take effect
+- Modify the reduced font sizes for mobile devices
+- Change padding and margin values for mobile displays
+
+**Impact**: Responsive adjustments ensure your hero section looks good on all devices. Proper mobile optimization improves user experience and SEO ranking, as Google prioritizes mobile-friendly websites.
+
+## Summary of Key Customizations
+
+1. **Visual Impact**:
+   - Change background images for different visual themes
+   - Adjust overlay opacity and color for mood and readability
+   - Modify height and spacing for drama vs. content visibility
+
+2. **Content Focus**:
+   - Adjust typography size and spacing for emphasis
+   - Change text container styling to control focus
+   - Rearrange button layout to prioritize different actions
+
+3. **Brand Identity**:
+   - Align colors with your brand palette
+   - Adjust rounded corners and shadows to match your design language
+   - Change text alignment to match your brand's personality (centered is formal, left-aligned is casual)
+
+These customizations allow you to tailor the hero section to effectively communicate OceanAid360's mission while guiding visitors toward key actions on your website.
+
+--------------------------------------------------------------*/
+.hero {
+    padding: 4rem 0;
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('../images/hero-bg.jpg') center/cover no-repeat;
+}
+
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 33.333%; /* One third of the width */
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content {
+    flex: 2;
+    color: white;
+    z-index: 1;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.hero-buttons .btn {
+    margin: 0.5rem;
+    white-space: normal;
+    text-align: center;
+    padding: 1rem 1.5rem;
+}
+
+/* Hero section for content pages */
+.hero-section {
+    background-color: #f8f9fa;
+    padding: 3rem 0 2rem;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* Page Hero Section */
+.page-hero {
+    background-color: #0096c7;
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.page-hero p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Program-specific hero backgrounds */
+.emergency-hero {
+    background-image: url('images/emergency-hero.jpg');
+}
+
+.shores-hero {
+    background-image: url('images/shores-hero.jpg');
+}
+
+.recycling-hero {
+    background-image: url('images/recycling-hero.jpg');
+}
+
+.funding-hero {
+    background-image: url('images/funding-hero.jpg');
+}
+
+.partnering-hero {
+    background-image: url('images/partnering-hero.jpg');
+}
+    .program-card {
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .program-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .program-icon {
+        transition: background-color 0.3s ease;
+    }
+    
+    .program-card:hover .program-icon {
+        background-color: #e6f7ef;
+    }
+    
+    .card-link-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    
+    /* Make sure the Learn More button stays above the overlay */
+    .program-card .btn-text {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Hero text container with semi-transparent background */
+    .hero-text-container {
+        background-color: rgba(50, 50, 50, 0.7); /* Semi-transparent dark gray */
+        padding: 30px;
+        border-radius: 10px;
+        margin: 0 auto 30px;
+        max-width: 800px;
+        text-align: center;
+    }
+    
+    .hero-text-container h1 {
+        color: #ffffff;
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        line-height: 1.2;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    
+    .hero-text-container p {
+        color: #f0f0f0;
+        font-size: 1.1rem;
+        margin: 0 auto;
+        max-width: 700px;
+        line-height: 1.6;
+    }
+    
+    /* Make hero-content display as flex-column for better centering */
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        z-index: 1;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .hero-text-container {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-text-container h1 {
+            font-size: 1.8rem;
+        }
+        
+        .hero-text-container p {
+            font-size: 1rem;
+        }
+    }
+
+
+/*--------------------------------------------------------------
+# Buttons & CTAs
+
+Buttons and CTAs
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.btn-primary {
+    background-color: #66cc99;
+    color: white;
+}
+.btn-secondary {
+    background-color: #0078a0;
+    color: white;
+    margin-left: 1rem;
+}
+Purpose: Defines button styles and variations Customization:
+	• Change padding to make buttons larger or smaller
+	• Adjust border-radius for more square or rounded buttons
+	• Modify background-color to change button colors
+	• Change text-transform if you don't want uppercase text
+
+Website Buttons: Purpose and Function
+In the context of a website, "buttons" refer to interactive elements designed to be clicked or tapped by users to perform specific actions. They are fundamental components of web interfaces that help users navigate and interact with your site.
+What Buttons Look Like
+On your OceanAid360 website, buttons typically appear as:
+
+Styled clickable elements with:
+
+Background colors (often in your brand colors like #66cc99 for primary buttons)
+Rounded corners (using border-radius: 30px for a pill shape)
+Text labels that communicate their purpose (like "DONATE" or "Learn More")
+Visual feedback when hovered over (using CSS transitions and transforms)
+
+
+Visual varieties defined in your CSS:
+
+.btn-primary: Green buttons for primary actions
+.btn-secondary: Blue buttons for secondary actions
+.btn-outline: Transparent buttons with colored borders for tertiary actions
+
+
+
+How Buttons Enable Action and Navigation
+Buttons are interactive elements that:
+
+Trigger actions when clicked:
+
+Form submissions (like newsletter sign-ups or donation forms)
+Opening modal windows or dialogs
+Initiating processes (like downloading files or starting animations)
+Showing/hiding content sections
+
+
+Enable navigation throughout the site:
+
+Link to other pages within your site (like "Learn More" buttons)
+Redirect to external resources (like partner websites)
+Jump to different sections on the same page (using anchor links)
+
+
+
+For example, in your OceanAid360 site:
+
+The "DONATE" button in the header navigates to your donation page
+The "Request Emergency Assistance" button likely links to a contact form
+"Back to Home" buttons return users to the homepage
+
+Button Implementation in HTML/CSS
+Buttons on websites can be created using two main HTML elements:
+
+<button> element: Used for actions that don't navigate to new pages
+html<button type="submit" class="btn btn-primary">Subscribe</button>
+
+<a> element styled as a button: Used for navigation
+html<a href="donate.html" class="btn btn-primary">DONATE</a>
+
+
+In your OceanAid360 CSS, the styling for these buttons is defined by classes like:
+css.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #66cc99;
+    color: white;
+}
+Strategic Use of Buttons
+Buttons are crucial for user experience and conversion:
+
+Call-to-Action (CTA) buttons: Prominent buttons that encourage users to take important actions
+
+Your "DONATE" button in the header is a primary CTA
+"Join Our Next Ghost Trap Rodeo" is a conversion-focused CTA
+
+
+Navigation buttons: Help users move around your site
+
+"Back to All Programs" buttons
+"Learn More" buttons for exploring content
+
+
+Form submission buttons: Complete interactions
+
+"Subscribe" buttons for newsletters
+"Send" buttons for contact forms
+
+
+
+Buttons are one of the most important interactive elements on your website, serving as both navigational aids and action triggers that help users engage with your content and services.
+
+--------------------------------------------------------------*/
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #66cc99;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #0078a0;
+    color: white;
+    margin-left: 1rem;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid #66cc99;
+    color: #66cc99;
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-sm {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+}
+
+.btn:hover, .btn-outline:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline:hover {
+    background-color: #66cc99;
+    color: white;
+}
+
+.btn-text {
+    color: #0078a0;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-text:hover {
+    text-decoration: underline;
+}
+
+.cta {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: #f5f9fa;
+}
+
+.cta-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #004d66;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+/*--------------------------------------------------------------
+# Program Content Styles
+--------------------------------------------------------------*/
+.program-content {
+    padding: 60px 0;
+}
+
+.program-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #0096c7;
+}
+
+.program-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.program-overview {
+    margin-bottom: 60px;
+}
+
+.key-features {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.feature {
+    flex-basis: calc(33.33% - 30px);
+    text-align: center;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature i {
+    font-size: 40px;
+    color: #0096c7;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* Approach Steps */
+.approach-steps {
+    margin-top: 40px;
+}
+
+.step {
+    display: flex;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background-color: #0096c7;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-right: 20px;
+}
+
+.step-content {
+    flex-grow: 1;
+}
+
+.step-content h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* Impact Stats */
+.impact-stats {
+    background-color: #f8f9fa;
+    padding: 60px 30px;
+    border-radius: 10px;
+    margin: 60px 0;
+    text-align: center;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.stat {
+    flex-basis: calc(25% - 30px);
+    margin-bottom: 30px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 48px;
+    font-weight: 700;
+    color: #0096c7;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Success Stories */
+.success-stories {
+    margin: 60px 0;
+}
+
+.story {
+    display: flex;
+    margin-bottom: 40px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.story img {
+    width: 40%;
+    object-fit: cover;
+}
+
+.story-content {
+    padding: 30px;
+    width: 60%;
+}
+
+.story-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Call to Action Section */
+.call-to-action {
+    background-color: #0096c7;
+    color: #fff;
+    padding: 60px 30px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 60px 0;
+}
+
+.call-to-action h2 {
+    color: #fff;
+}
+
+.call-to-action p {
+    color: #fff;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.primary-btn, .secondary-btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.primary-btn {
+    background-color: #fff;
+    color: #0096c7;
+}
+
+.primary-btn:hover {
+    background-color: #f1f1f1;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/*--------------------------------------------------------------
+# Section Titles & Common Elements
+--------------------------------------------------------------*/
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title h2 {
+    /* Font size is now defined in the Typography section */
+    margin-bottom: 1rem;
+}
+
+.section-title p {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.subsection-title {
+    /* Font size is now defined in the Typography section */
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.subsection-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #0078a0;
+}
+
+.subsection {
+    margin-top: 4rem;
+}
+
+.page-header {
+    background: linear-gradient(135deg, #004d66, #0078a0);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.feature-list {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.feature-list li {
+    margin-bottom: 0.8rem;
+    position: relative;
+}
+
+.feature-list li::before {
+    content: "✓";
+    color: #66cc99;
+    position: absolute;
+    left: -1.5rem;
+}
+
+/*--------------------------------------------------------------
+# Feature & Program Cards
+
+# Program Cards and Features in the OceanAid360 Website
+
+## Program Cards Explained
+
+Program cards are visual container elements used throughout your OceanAid360 website to present different programs, services, or initiatives in a consistent, easy-to-scan format. They serve as both informational and navigational elements.
+
+### Purpose and Usage
+
+Program cards serve several key purposes:
+
+1. **Information Organization**: They break down complex offerings into digestible chunks
+2. **Visual Hierarchy**: They create a consistent visual language for your programs
+3. **Navigation Assistance**: They guide users to specific program pages
+4. **Conversion Optimization**: They entice users to learn more about specific initiatives
+
+### Types of Program Cards on Your Website
+
+Based on your CSS, your website uses several variations of program cards:
+
+#### 1. Standard Program Cards
+
+```css
+.program-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+```
+
+These appear in grid layouts on your main pages, with:
+- Centered text
+- Icon or image at the top
+- Heading
+- Brief description text
+- Call-to-action link
+
+#### 2. Feature Cards 
+
+```css
+.feature {
+    flex-basis: calc(33.33% - 30px);
+    text-align: center;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+```
+
+Feature cards are similar to program cards but typically:
+- Display key capabilities or benefits
+- Use icons more prominently
+- Are organized in groups of three
+- Have a lighter background color
+
+#### 3. Navigation Cards
+
+```css
+.nav-card {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    /* more styles... */
+}
+```
+
+These simpler cards are used for on-page navigation, often appearing in horizontal rows.
+
+## Interactive Behaviors
+
+Your program cards include several interactive behaviors:
+
+```css
+.program-card {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+```
+
+When users hover over a program card:
+1. It lifts upward (using transform)
+2. Its shadow becomes more pronounced
+3. Its icon background may change color
+
+Additionally, many of your cards use an overlay link pattern:
+
+```css
+.card-link-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+```
+
+This makes the entire card clickable while still allowing specific buttons within the card to work.
+
+## Program Card Grid Layouts
+
+Your program cards are organized in responsive grid layouts:
+
+```css
+.program-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+```
+
+This creates a flexible grid where:
+- Cards automatically adjust based on available space
+- Each card is at least 250px wide
+- Cards equally share available space
+- There's a 2rem (32px) gap between cards
+- The layout adjusts automatically for different screen sizes
+
+## Customization Options for Program Cards
+
+You can customize many aspects of program cards to change their appearance:
+
+1. **Visual Style**:
+   - Change `background-color` for different card backgrounds
+   - Adjust `border-radius` for more/less rounded corners
+   - Modify `box-shadow` for different shadow effects
+   - Change `padding` for more/less internal space
+
+2. **Layout**:
+   - Adjust `minmax(250px, 1fr)` to change minimum card width
+   - Modify `gap: 2rem` to change spacing between cards
+   - Change `text-align` from `center` to `left` for left-aligned content
+
+3. **Interactive Behavior**:
+   - Adjust the hover transform: `transform: translateY(-10px)`
+   - Change transition timing: `transition: all 0.3s ease`
+   - Modify hover shadow intensity: `box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1)`
+
+## Program Icons
+
+Many of your program cards use icons to visually represent the program:
+
+```css
+.program-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #e6f7ef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+```
+
+These create circular icon containers that:
+- Are centered above the card content
+- Have a light green background
+- Contain SVG or image icons
+- Change background color on hover
+
+## Feature Cards vs. Program Cards
+
+While very similar in appearance, program cards and feature cards have subtle differences in their intended use:
+
+1. **Program Cards**: Represent specific programs or services offered by OceanAid360
+   - Used on main pages to direct to specific program pages
+   - Usually feature more detailed descriptions
+   - Often include "Learn More" links to dedicated pages
+
+2. **Feature Cards**: Highlight capabilities, benefits, or aspects of a single program
+   - Used within program pages to break down program components
+   - Often feature shorter descriptions
+   - May not necessarily link to other pages
+
+Both use the same visual language of contained, separated content blocks with consistent styling to maintain visual harmony throughout the site.
+
+By using a consistent card-based design system, your website creates a cohesive user experience while still allowing for flexibility in how different types of content are presented across various pages.
+
+--------------------------------------------------------------*/
+.cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card h3 {
+    color: #004d66;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Program Cards */
+.program-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.program-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.program-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #e6f7ef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.program-card h3 {
+    color: #004d66;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+/* Program Components */
+.program-component {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.program-component:last-child {
+    border-bottom: none;
+}
+
+.program-component h4 {
+    color: #004d66;
+    margin-bottom: 0.8rem;
+}
+
+.program-component a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #0078a0;
+    font-weight: bold;
+}
+
+/*--------------------------------------------------------------
+# Navigation & Back links
+--------------------------------------------------------------*/
+/* Back to Home or Parent link */
+.back-to-home, .back-to-parent {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #f8f9fa;
+    border-radius: 30px;
+    color: #004d66;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.back-to-home i, .back-to-parent i {
+    margin-right: 0.5rem;
+}
+
+.back-to-home:hover, .back-to-parent:hover {
+    background-color: #e6f7ef;
+    transform: translateX(-5px);
+}
+
+/* Page Navigation */
+.page-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0;
+}
+
+/* On-page navigation cards */
+.page-navigation-cards {
+    margin: 2rem 0;
+}
+
+.navigation-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.nav-card {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    color: #004d66;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.nav-card i {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    color: #66cc99;
+}
+
+.nav-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #e6f7ef;
+}
+
+/*--------------------------------------------------------------
+# Footer Styles - New Structure
+--------------------------------------------------------------*/
+footer {
+    background-color: #03045e;
+    color: #fff;
+    padding: 60px 0 20px;
+}
+
+.footer-sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-section {
+    flex-basis: calc(25% - 30px);
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #0096c7;
+}
+
+.footer-section p {
+    margin-bottom: 20px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin-right: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #0096c7;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul a:hover {
+    color: #0096c7;
+}
+
+address p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+address p i {
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #0096c7;
+}
+
+/* Legacy Footer Support */
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.site-footer {
+    background-color: #004d66;
+    color: #fff;
+    padding-top: 3rem;
+}
+
+.footer-widgets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.widget-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.widget-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #66cc99;
+}
+
+/*--------------------------------------------------------------
+# Programs Navigation Cards
+--------------------------------------------------------------*/
+.nav-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.nav-card {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 1rem;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 0; /* Allows flex items to shrink below content size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.nav-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    background-color: #f0f8f4;
+}
+
+.nav-icon {
+    margin-bottom: 0.5rem;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none; /* Remove any background */
+    border-radius: 0; /* Remove rounded corners from icon container */
+}
+
+.nav-icon-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This will fill the space with the image */
+    border-radius: 4px; /* Optional: slight rounding of image corners */
+}
+
+.nav-card h3 {
+    font-size: 0.95rem; /* Slightly smaller text to fit */
+    margin: 0.25rem 0 0;
+    color: #004d66;
+}
+
+/*--------------------------------------------------------------
+# Responsive Styles
+--------------------------------------------------------------*/
+@media (max-width: 1024px) {
+    .feature {
+        flex-basis: calc(50% - 30px);
+        margin-bottom: 30px;
+    }
+    
+    .stat {
+        flex-basis: calc(50% - 30px);
+    }
+    
+    .footer-section {
+        flex-basis: calc(50% - 30px);
+        margin-bottom: 30px;
+    }
+    
+    .nav-card {
+        width: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navigation - New Structure */
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 90px;
+        left: -100%;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        height: calc(100vh - 90px);
+        transition: 0.5s;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+        padding: 20px 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 0;
+    }
+    
+    .nav-menu a {
+        display: block;
+        padding: 15px 20px;
+        font-size: 18px;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .dropdown-menu.active {
+        display: block;
+    }
+    
+    .dropdown-menu a {
+        padding-left: 40px;
+    }
+    
+    /* Legacy Mobile Navigation */
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .main-nav {
+        position: fixed;
+        top: 83px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 1rem 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .main-nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .mobile-nav-toggle {
+        display: block;
+    }
+    
+    /* Content Sections */
+    .feature, .stat {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .story {
+        flex-direction: column;
+    }
+    
+    .story img, .story-content {
+        width: 100%;
+    }
+    
+    .hero-wrapper, 
+    .key-features, 
+    .stats-container {
+        flex-direction: column;
+    }
+    
+    .hero-image {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    /* Footer */
+    .footer-section {
+        flex-basis: 100%;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-links {
+        margin-top: 20px;
+    }
+    
+    .footer-links a {
+        margin: 0 10px;
+    }
+    
+    /* Navigation Cards */
+    .nav-cards {
+        flex-wrap: wrap;
+    }
+    
+    .nav-card {
+        flex: 0 0 48%; /* Two cards per row on medium screens */
+        margin-bottom: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-card {
+        flex: 0 0 100%; /* One card per row on small screens */
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .btn-secondary {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+}
+
+/* Alternative Hero Section with Multiple Fixed Images */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px; /* Space between images */
+    padding: 5px; /* Padding around the entire grid */
+    z-index: 0;
+}
+
+.hero-bg-image {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border: 3px solid #fff; /* White border around each image */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-bg-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Slightly lighter overlay */
+}
+
+/* Image declarations */
+.hero-bg-image:nth-child(1) {
+    background-image: url('../images/GhostTrapPicture.jpg');
+}
+
+.hero-bg-image:nth-child(2) {
+    background-image: url('../images/defuncttraps.jpg');
+}
+
+.hero-bg-image:nth-child(3) {
+    background-image: url('../images/plasticsrecycling.jpg');
+}
+
+.hero-bg-image:nth-child(4) {
+    background-image: url('../images/recycledproductresin.jpg');
+}
+
+.hero-bg-image:nth-child(5) {
+    background-image: url('../images/multipleboats.jpg');
+}
+
+/* Product Video Container */
+.product-video-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.video-background {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-image: url("images/FL Red Tide.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1;
+    padding: 40px;
+}
+
+.video-background video {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    position: relative;
+    z-index: 2;
+}
+
+/* Recycled Products Section */
+.product-feature {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.product-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.product-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Updated Impact Stats - Better Image/Text Proportions */
+.impact-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #2c5282;
+    margin-bottom: 15px;
+}
+
+.section-title p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Flexible Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Individual Stat Item - BETTER PROPORTIONS */
+.stat-item {
+    background: white !important;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between image and text */
+    min-height: 140px; /* Slightly taller for better proportions */
+}
+
+.stat-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Larger Square Image - Takes More Space */
+.stat-image {
+    width: 110px; /* Increased from 80px */
+    height: 110px; /* Increased from 80px */
+    margin: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    flex-shrink: 0; /* Don't let image shrink */
+}
+
+.stat-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text Content - Takes Less Space, Smaller Text */
+.stat-text-content {
+    flex: 1; /* Take remaining space */
+    padding-left: 10px; /* Small extra space from image */
+}
+
+.stat-number {
+    font-size: 2.2rem; /* Reduced from 2.8rem */
+    font-weight: bold;
+    color: #2c5282;
+    display: block;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.stat-description {
+    font-size: 0.9rem; /* Reduced from 1rem */
+    color: #333 !important;
+    line-height: 1.3; /* Tighter line spacing */
+    margin: 0;
+}
+
+/* Grid Layout Controls */
+.stats-three {
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.stats-four {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.stats-six {
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .stats-three,
+    .stats-four,
+    .stats-six {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .stat-item {
+        padding: 20px;
+        min-height: 120px;
+        gap: 15px;
+    }
+    
+    .stat-image {
+        width: 90px; /* Slightly smaller on tablets */
+        height: 90px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stat-description {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-item {
+        flex-direction: column; /* Stack vertically on very small screens */
+        text-align: center;
+        gap: 15px;
+        min-height: auto;
+    }
+    
+    .stat-image {
+        margin: 0 auto;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .stat-text-content {
+        padding-left: 0;
+    }
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+    /* When screen width is 768px or less (tablets and phones) */
+    
+    .stats {
+        grid-template-columns: 1fr; /* Stack cards vertically in a single column */
+    }
+    
+    .stat-content {
+        flex-direction: column; /* Stack image above text vertically */
+        min-height: auto; /* Remove minimum height constraint for mobile */
+    }
+    
+    .stat-image {
+        width: 100%; /* Image takes full width on mobile */
+        height: 200px; /* Fixed height of 200px for consistent mobile experience */
+    }
+    
+    .stat-text {
+        padding: 1.5rem; /* Increases padding to 24px all around for mobile */
+        text-align: center; /* Centers the text on mobile for better appearance */
+    }
+}
+/* In your CSS file */
+.emergency-banner {  /* More specific class name */
+    background-size: 100% auto;
+    background-position: center top;
+    padding: 250px 0 40px;
+    margin-bottom: 30px;
+    position: relative;
+    /* Other styles */
+}
+.emergency-banner .banner-content {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 10px;
+    /* Other styles */
+}
+
+/* In your CSS file */
+.emergency-banner {
+    margin-top: 40px;
+    /* other styles */
+}
+
+    <!-- Add this CSS for merchandise page-specific styles -->
+    <style>
+        /* Merchandise Grid Layout */
+        .merchandise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+        
+        .merchandise-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+            padding: 0 0 1.5rem;
+        }
+        
+        /* Product Images */
+        .product-images {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+        
+        .product-image, .product-image-alt {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+        
+        .product-image-alt {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        
+        .product-images:hover .product-image {
+            opacity: 0;
+        }
+        
+        .product-images:hover .product-image-alt {
+            opacity: 1;
+        }
+        
+        /* Product Details */
+        .product-details {
+            padding: 1.5rem;
+        }
+        
+        .product-details h3 {
+            color: #004d66;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Product Options */
+        .product-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .option-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .option-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .product-select {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            color: #333;
+            font-size: 0.9rem;
+            width: 100%;
+            cursor: pointer;
+        }
+        
+        .product-select:focus {
+            outline: none;
+            border-color: #0096c7;
+        }
+        
+        /* Add to Cart Button */
+        .add-to-cart-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 0.75rem 1.5rem;
+            background-color: #0096c7;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+        
+        .add-to-cart-btn:hover {
+            background-color: #00b4d8;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Product Description */
+        .product-description {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .product-features {
+            margin: 1rem 0;
+            padding-left: 1.2rem;
+        }
+        
+        .product-features li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Environmental Impact Section */
+        .environmental-impact {
+            margin: 4rem 0;
+            background-color: #f8f9fa;
+            padding: 3rem;
+            border-radius: 10px;
+        }
+        
+        .impact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .impact-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .impact-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .impact-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .impact-list {
+            margin: 1.5rem 0;
+            padding-left: 1.2rem;
+        }
+        
+        .impact-list li {
+            margin-bottom: 0.8rem;
+        }
+        
+        /* Cart Icon in Header */
+        .cart-icon {
+            position: relative;
+            display: inline-block;
+            margin-left: 15px;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #0096c7;
+            color: white;
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Shopping Cart Popup */
+        .cart-popup {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: right 0.3s ease;
+        }
+        
+        .cart-popup.active {
+            right: 0;
+        }
+        
+        .cart-popup-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .cart-popup-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cart-popup-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        
+        .close-popup {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        .cart-popup-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .cart-item {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
+        }
+        
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-details h4 {
+            margin: 0 0 5px;
+            font-size: 1rem;
+            color: #333;
+        }
+        
+        .cart-item-details p {
+            margin: 0 0 5px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+        .quantity-btn {
+            width: 25px;
+            height: 25px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .quantity-input {
+            width: 30px;
+            height: 25px;
+            border: 1px solid #ddd;
+            text-align: center;
+            margin: 0 5px;
+        }
+        
+        .cart-item-subtotal {
+            margin-left: 15px;
+            font-weight: 600;
+            color: #333;
+            align-self: center;
+        }
+        
+        .remove-item {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: none;
+            border: none;
+            color: #999;
+            cursor: pointer;
+        }
+        
+        .cart-popup-footer {
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .cart-subtotal {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .view-cart-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #0096c7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .product-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-content {
+                flex-direction: column;
+            }
+            
+            .cart-popup {
+                width: 100%;
+                right: -100%;
+            }
+        }
+    </style>
+
+ /* Cart Popup Styles */
+.cart-popup {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Start off-screen */
+    width: 400px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+.cart-popup.active {
+    right: 0; /* Slide in from right */
+}
+
+.cart-popup-content {
+    padding: 20px;
+}
+
+.cart-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.close-popup {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.cart-item {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item-image {
+    width: 80px;
+}
+
+.cart-item-image img {
+    width: 100%;
+    height: auto;
+}
+
+.cart-item-details {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    cursor: pointer;
+}
+
+.quantity-input {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+}
+
+.cart-popup-footer {
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.cart-subtotal {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.view-cart-btn {
+    display: block;
+    background-color: #0096c7;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.spacer-small {
+    height: 30px;
+}
+
+.spacer-medium {
+    height: 60px;
+}
+
+.spacer-large {
+    height: 100px;
+}
+
+.spacer-extra-large {
+    height: 150px;
+    }
+
+/* Three Image Section Component Styles */
+.intro-text {
+    color: #000;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.three-image-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    gap: 2%;
+}
+
+.image-card {
+    width: 32%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 200px;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.content-section h3 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.feature-list {
+    margin-bottom: 20px;
+}
+
+.feature-list li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .three-image-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .image-card {
+        width: 100%;
+        height: 250px;
+    }
+}
+
+/* Six Feature Grid Component */
+.six-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item i {
+    color: #2c5282;
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    margin-bottom: 15px;
+    color: #2c5282;
+}
+
+.feature-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.section-summary {
+    margin-top: 40px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Project Stories Component */
+.project-stories {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.story-card {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+}
+
+.story-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.story-image {
+    flex: 0 0 300px;
+    height: 250px;
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.story-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.story-content h3 {
+    color: #2c5282;
+    margin-bottom: 15px;
+}
+
+.story-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design for Project Stories */
+@media (max-width: 768px) {
+    .story-card,
+    .story-card:nth-child(even) {
+        flex-direction: column;
+    }
+    
+    .story-image {
+        flex: none;
+        height: 200px;
+    }
+    
+    .story-content {
+        padding: 20px;
+    }
+}
+
+/* ============================================
+   CSS Property Reference:
+============================================
+   
+ Image/Text Ratio:
+
+Change width: 40% in .stat-image to make images larger or smaller
+The text automatically takes up the remaining space
+
+
+Colors:
+
+Modify background-color: #333 in .stat-item for different card background
+Change text colors in .stat-text h3 and .stat-text p for different text appearance
+Adjust color: #f0f0f0 for paragraph text to change description visibility
+
+
+Card Size:
+
+Adjust min-height: 200px in .stat-content for taller/shorter cards
+Modify minmax(350px, 1fr) in .stats grid to change minimum card width
+
+
+Spacing:
+
+Change gap: 2rem in .stats to adjust space between cards
+Modify padding values (padding: 1rem) to adjust internal spacing
+Adjust padding: 0 1.5rem in .stat-text for text spacing
+
+
+Typography:
+
+Change font-size: 2.5rem in .stat-text h3 for different number sizes
+Modify font-size: 1.1rem in .stat-text p for description text size
+Adjust line-height: 1.6 to change spacing between text lines
+
+
+
+The responsive section (media query) ensures your design works well on mobile devices by stacking content vertically when the screen gets too narrow. 
+
+ Key concepts you can adjust:
+   
+   1. Layout Control:
+      - display: Defines how element displays (flex, grid, block, etc.)
+      - flex-direction: Controls direction of flex items (row, column)
+      - align-items: Aligns flex items perpendicular to flex direction
+      - justify-content: Aligns flex items along flex direction
+   
+   2. Sizing:
+      - width/height: Explicit size
+      - min-width/min-height: Minimum size constraints
+      - max-width/max-height: Maximum size constraints
+      - flex-shrink: Controls how flex items shrink when space is tight
+      - object-fit: How images fill their containers
+   
+   3. Spacing:
+      - padding: Space inside an element
+      - margin: Space outside an element
+      - gap: Space between grid or flex items
+   
+   4. Visual Styling:
+      - background-color: Background fill color
+      - color: Text color
+      - border-radius: Rounds corners
+      - box-shadow: Adds shadow effects
+   
+   5. Typography:
+      - font-size: Text size
+      - line-height: Spacing between lines
+      - text-align: Horizontal text alignment
+   
+   6. Responsive Design:
+      - @media: Applies styles conditionally based on screen size
+      - Common breakpoints: 320px (phones), 768px (tablets), 1024px (desktop)
+============================================ */

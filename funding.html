@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanAid360 - Fisheries Monitoring</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- jQuery for loading modular components -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Load the internal header and footer
+            $("#header-container").load("components/header-internal.html", function() {
+                // Re-initialize any header-specific JavaScript if needed
+                initializeHeaderFunctions();
+            });
+            $("#footer-container").load("components/footer.html");
+        });
+        
+        // Function to re-initialize any header-specific JavaScript
+        function initializeHeaderFunctions() {
+            // This ensures any event listeners in the header work correctly
+            // For example, mobile menu toggle functionality
+            if (typeof initMobileMenu === 'function') {
+                initMobileMenu();
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Container - THIS WAS MISSING! -->
+    <div id="header-container"></div>
+
+
+
+    
+    <!-- Main content -->
+    <main id="main-content">
+        <!-- Hero section with emphasized title -->
+       
+           <section class="page-hero" style="background-image: url('images/ocean-conservation-hero.jfif');">
+        <div class="container">
+           <h1 style="color: white;">Funding the Mission</h1>
+            <p>Strategic initiatives to support our ongoing and new conservation efforts</p>
+        </div>
+    </section>
+        <!-- Overview section -->
+        <section class="program-section" id="approach">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Funding Approach</h2>
+                </div>
+                <div class="program-content">
+                    <div class="program-text">
+                        <p>Ocean Aid 360 employs a diverse funding strategy to ensure the sustainability and growth of our conservation programs. As a 501(c)(3) tax-exempt organization, we leverage multiple funding streams to maximize our impact while maintaining transparent financial management.</p>
+                    </div>
+                    <div class="program-image">
+                        <img src="images/funding-approach.jpg" alt="Visualization of OceanAid360's funding approach">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Funding sources section -->
+        <section class="program-section" id="sources">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Funding Sources</h2>
+                    <p>How we maintain sustainable operations through diversified support</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature">
+                        <i class="fas fa-hand-holding-usd fa-2x"></i>
+                        <h3>Grants & Foundation Support</h3>
+                        <p>We secure competitive grants from organizations like NOAA and the National Fish and Wildlife Foundation, with our team having extensive experience in grant writing and management.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <i class="fas fa-building fa-2x"></i>
+                        <h3>Corporate Partnerships</h3>
+                        <p>Strategic collaborations with businesses that share our conservation values provide financial support, in-kind donations, and volunteer resources.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <i class="fas fa-users fa-2x"></i>
+                        <h3>Individual Donations</h3>
+                        <p>Support from individual donors of all levels helps fund our day-to-day operations and specific program needs.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <i class="fas fa-shopping-cart fa-2x"></i>
+                        <h3>Product Revenue</h3>
+                        <p>Sales from our recycled products and commercial services help support our non-profit initiatives while advancing our circular economy goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Financial transparency section -->
+        <section class="program-section" id="transparency">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Financial Transparency</h2>
+                </div>
+                <div class="program-content">
+                    <div class="program-text">
+                        <p>All resources afforded to Ocean Aid 360 are third-party audited to ensure proper management and allocation. We are committed to maximizing the impact of every dollar toward our conservation mission.</p>
+                        
+                      <!-- Replace the stats-container section with this -->
+<section class="impact-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Funding Impact</h2>
+            <p>How your support creates measurable change</p>
+        </div>
+        <div class="stats-grid stats-three">
+      
+            <div class="stat-item">
+    <div class="stat-image">
+        <img src="images/fundingdirectsupport.jfif" alt="Program Funding">
+    </div>
+    <div class="stat-text-content">
+        <span class="stat-number">85%</span>
+        <p class="stat-description">Of funds directly support programs</p>
+    </div>
+</div>       
+          
+        <div class="stat-item">
+    <div class="stat-image">
+        <img src="images/transparency.jpg" alt="Financial Transparency">
+    </div>
+    <div class="stat-text-content">
+        <span class="stat-number">100%</span>
+        <p class="stat-description">Financial Transparency</p>
+    </div>
+</div>       
+            
+  <div class="stat-item">
+    <div class="stat-image">
+        <img src="images/partnership.jpg" alt="Funding Partnerships">
+    </div>
+    <div class="stat-text-content">
+        <span class="stat-number">12+</span>
+        <p class="stat-description">Major Funding Partnerships</p>
+    </div>
+</div>       
+            
+  
+        </div>
+    </div>
+</section>
+                    </div>
+                    <div class="program-image">
+                        <img src="images/funding-impact.jpg" alt="Funding impact visualization">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to action section -->
+        <section class="program-section cta-section" id="get-involved">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Support Our Mission</h2>
+                    <p>Join us in protecting our oceans for future generations</p>
+                </div>
+                <div class="cta-content">
+                    <p>Your support enables us to continue our vital work protecting marine ecosystems and promoting sustainable practices. Whether you're an individual, foundation, or corporation, there are many ways to get involved.</p>
+                    <div class="cta-buttons">
+                        <a href="nonprofit.html#donate" class="btn btn-primary">Make a Donation</a>
+                        <a href="contact.html#corporate" class="btn btn-secondary">Become a Corporate Partner</a>
+                        <a href="volunteer.html" class="btn btn-secondary">Volunteer With Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Back to Programs navigation -->
+        <div class="page-navigation container">
+            <a href="programs.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Back to All Programs
+            </a>
+            <a href="index.html" class="btn btn-secondary">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
+        </div>
+    </main>
+    
+    <!-- Footer (same on all pages) -->
+    <!-- Footer Container - REPLACED HARDCODED FOOTER -->
+    <div id="footer-container"></div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

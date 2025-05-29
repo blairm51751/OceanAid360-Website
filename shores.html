@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanAid360 - Saving Shores and Wildlife</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- jQuery for loading modular components -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Load the internal header and footer
+            $("#header-container").load("components/header-internal.html", function() {
+                // Re-initialize any header-specific JavaScript if needed
+                initializeHeaderFunctions();
+            });
+            $("#footer-container").load("components/footer.html");
+        });
+        
+        // Function to re-initialize any header-specific JavaScript
+        function initializeHeaderFunctions() {
+            // This ensures any event listeners in the header work correctly
+            // For example, mobile menu toggle functionality
+            if (typeof initMobileMenu === 'function') {
+                initMobileMenu();
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero" style="background-image: url('images/EmergencyResponseBullet.png');">
+            <div class="container">
+               <h1 style="color: white;">Saving the Shores and Wildlife</h1>
+                <p>Conservation programs focused on preserving critical coastal habitats and protecting marine species</p>
+            </div>
+        </section>
+
+<!-- Emergency Page - Three Image Section Using New Component System -->
+<section class="program-content">
+    <div class="container">
+        <div class="program-overview">
+            <!-- Introduction paragraph - CUSTOMIZED FOR SHORES PAGE -->
+            <p class="intro-text">Our Saving the Shores and Wildlife initiative combines habitat restoration, species monitoring, and community education to create comprehensive protection for our coastal ecosystems. We focus on evidence-based approaches that create measurable improvements for marine habitats and the species that depend on them.</p>
+            
+            <!-- Three images in a horizontal row -->
+            <div class="three-image-grid">
+                <div class="image-card">
+                    <img src="images/fishingevalsmonitoring.avif" alt="Fish Kill">
+                </div>
+                <div class="image-card">
+                    <img src="images/savingshores2.jfif" alt="Shore Fish Kill">
+                </div>
+                <div class="image-card">
+                    <img src="images/savingshores3.jfif" alt="Red Tide">
+                </div>
+            </div>
+            
+            <!-- Content section - CUSTOMIZED FOR SHORES PAGE -->
+            <div class="program-component">
+                        <h4><a href="ghosttrap.html">Ghost Trap Rodeo</a></h4>
+                        <p>Our signature marine debris tournament series mobilizes recreational and commercial anglers to locate and remove derelict fishing gear while competing for prizes. These events help clear waterways of harmful debris while collecting valuable data on bycatch and habitat impacts.</p>
+                        <a href="ghosttrap.html" class="link-arrow">Learn more about Ghost Trap Rodeo</a>
+                    </div>
+                    
+                    <div class="program-component">
+                        <h4><a href="coastal community.html">Coastal Community Programming</a></h4>
+                        <p>We empower coastal communities through education and clear pathways to address challenges impacting adjacent marine habitat and resources. Our programs include school-based education, community science initiatives, and stakeholder engagement.</p>
+                        <a href="coastal community.html" class="link-arrow">Learn more about Coastal Community Programming</a>
+                    </div>
+                    
+                    <div class="program-component">
+                        <h4><a href="fisheries.html">Fisheries Monitoring + Evals</a></h4>
+                        <p>Our science-based monitoring programs track the health of fish populations as indicators of overall ecosystem health. We conduct statistical data management and modeling to inform resource management decisions.</p>
+                        <a href="fisheries.html" class="link-arrow">Learn more about Fisheries Monitoring</a>
+                    </div>
+                
+               <div class="program-cta">
+                        <a href="nonprofit.html#volunteer" class="btn btn-primary">Volunteer with Us</a>
+                        <a href="DONATE.HTML" class="btn btn-secondary">Support These Programs</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+     
+            
+        <!-- Back to Programs navigation -->
+        <div class="page-navigation container">
+            <a href="index.html" class="btn btn-secondary">← Back to All Programs</a>
+        </div>
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
