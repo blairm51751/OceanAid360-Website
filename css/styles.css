@@ -17,6 +17,8 @@ Additional Customization Tips
 		○ Modify box-shadow to change depth/prominence of elements
 The CSS includes detailed comments for the impact section specifically, which should help you make targeted changes to those elements.
 ___________________________________________________________________*/
+/* Forcing cursor to be normal */
+* { cursor: auto !important; }
 
 /* Accessibility Enhancement - Skip Link */
 .skip-to-content {
